@@ -13,6 +13,7 @@
 		4D46A2591E574405003F7E92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D46A2581E574405003F7E92 /* Assets.xcassets */; };
 		4D46A25C1E574405003F7E92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D46A25A1E574405003F7E92 /* LaunchScreen.storyboard */; };
 		4D46A2641E574466003F7E92 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D46A2631E574466003F7E92 /* QuestionModel.swift */; };
+		4DD5E62D1E8581AE00A6FB79 /* questionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD5E62C1E8581AE00A6FB79 /* questionData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		4D46A25B1E574405003F7E92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D46A25D1E574405003F7E92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D46A2631E574466003F7E92 /* QuestionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
+		4DD5E62C1E8581AE00A6FB79 /* questionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = questionData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +65,17 @@
 				4D46A25A1E574405003F7E92 /* LaunchScreen.storyboard */,
 				4D46A25D1E574405003F7E92 /* Info.plist */,
 				4D46A2631E574466003F7E92 /* QuestionModel.swift */,
+				4DD5E62E1E85855D00A6FB79 /* data */,
 			);
 			path = LearnYouKanji;
+			sourceTree = "<group>";
+		};
+		4DD5E62E1E85855D00A6FB79 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				4DD5E62C1E8581AE00A6FB79 /* questionData.swift */,
+			);
+			name = data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +153,7 @@
 				4D46A2541E574405003F7E92 /* ViewController.swift in Sources */,
 				4D46A2641E574466003F7E92 /* QuestionModel.swift in Sources */,
 				4D46A2521E574405003F7E92 /* AppDelegate.swift in Sources */,
+				4DD5E62D1E8581AE00A6FB79 /* questionData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +313,7 @@
 				4D46A2621E574405003F7E92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
