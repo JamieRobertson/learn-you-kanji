@@ -108,5 +108,7 @@ fastlane/test_output
 ## Various settings
 
 ## Other
+lyk_concepts/inspiration/
+lyk_concepts/Template-AppIcons-iOS.sketch
 
 # End of https://www.gitignore.io/api/osx,swift,xcode
