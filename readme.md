@@ -17,13 +17,26 @@ Project uses [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON). Install it 
 ### Notes
 Inspect core data:  
 ```bash
-// Navigate to correct sqlite file - somewhere in 
+
+# Navigate to correct sqlite file - somewhere in 
 $ cd ~/Library/Developer/CoreSimulator/Devices/
-// Searching for it can be a bit tedious
+
+# Searching for it can be a bit tedious
 $ find . -name LearnYouKanji
 $ find . -name "*.sqlite"
-// Use sqlite command line manager 
+
+# Use sqlite command line manager 
 $ sqlite3 LearnYouKanji.sqlite
-// output table to inspect
+
+# output table to inspect
 $ sqlite3 LearnYouKanji.sqlite "SELECT * FROM ZQUESTION ;" > output.txt
 ```
+
+<img src="https://github.com/JamieRobertson/learn-you-kanji/blob/master/screenshots/github/lyk-screenshot-1.png" width="320" height="480" />
+&nbsp;
+<img src="https://github.com/JamieRobertson/learn-you-kanji/blob/master/screenshots/github/lyk-screenshot-2.png" width="320" height="480" />
+<br style="clear: both;">
+
+<img src="https://github.com/JamieRobertson/learn-you-kanji/blob/master/screenshots/github/lyk-screenshot-3.png" width="320" height="480" />
+&nbsp;
+<img src="https://github.com/JamieRobertson/learn-you-kanji/blob/master/screenshots/github/lyk-screenshot-4.png" width="320" height="480" />
