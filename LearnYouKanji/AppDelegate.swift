@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import CoreData
+import SwiftyJSON
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,8 +17,55 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
+    func preloadData(){
+        print("running preload")
+        do {
+            if let file = Bundle.main.url(forResource: "questionData", withExtension: "json") {
+                
+                // Use SwiftyJSON to serialize json data
+                let data = try Data(contentsOf: file)
+                let json = JSON(data: data)
+                var questionId:Int16 = 0  // index added to each question
+                
+                for (_, courseObject):(String, JSON) in json {
+                    let course:Course = NSEntityDescription.insertNewObject(
+                        forEntityName: "Course", into: DatabaseController.getContext()
+                    ) as! Course
+                    course.name = courseObject["name"].stringValue
+                    course.grade = courseObject["grade"].number as! Int16
+                    
+                    let questionsArray = courseObject["questions"].arrayValue
+                    for questionObject:JSON in questionsArray {
+                        let question:Question = NSEntityDescription.insertNewObject(
+                            forEntityName: "Question", into: DatabaseController.getContext()
+                        ) as! Question
+                        question.id = questionId; questionId += 1
+                        question.question = questionObject["question"].stringValue
+                        question.answer = questionObject["answer"].stringValue
+                        course.addToQuestions(question)
+                    }
+                }
+                DatabaseController.saveContext()
+
+            } else {
+                print("no file found")
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let defaults = UserDefaults.standard
+        let isPreloaded = defaults.bool(forKey: "isPreloaded")
+
+        if !isPreloaded {
+            self.preloadData()
+            defaults.set(true, forKey: "isPreloaded")
+        } else {
+            print("data is preloaded")
+        }
         return true
     }
 
@@ -39,8 +89,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        DatabaseController.saveContext()
     }
-
 
 }
 

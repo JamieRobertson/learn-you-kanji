@@ -9,9 +9,10 @@
 import UIKit
 import GameKit
 
+
 class ViewController: UIViewController {
     
-    // Buttons
+    // buttons
     @IBOutlet weak var flashCard: UILabel!
     @IBOutlet weak var answer1: UIButton!
     @IBOutlet weak var answer2: UIButton!
@@ -19,11 +20,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var answer4: UIButton!
     @IBOutlet weak var submitAnswerButton: UIButton!
 
+    // buttons as array
     lazy var answerButtons:[UIButton] = { return [self.answer1, self.answer2, self.answer3, self.answer4] }()
-    
-    // Properties
-    var questions = [Question]()  // init as property of class
-    let maxQuestions:Int = 10
+
+    // custom var
+    let grade:Int = 1
+    let maxQuestions:Int = 9
+
+    // created on view load
+    var questions = [Question]()
+    var choices = [Choice]()
+
+    // current state properties
     var totalScore:Int = 0
     var currentQuestion:Int = 0
     var hasSubmittedAnswer:Bool = false
@@ -37,7 +45,6 @@ class ViewController: UIViewController {
         "gray-light": UIColor(red: 220.0/255, green: 220.0/255, blue: 220.0/255, alpha: 1.0)
     ]
 
-    
     func showNextQuestion(q:Int) {
         // reset to some defaults
         self.hasSubmittedAnswer = false
@@ -49,16 +56,15 @@ class ViewController: UIViewController {
         // add answers to buttons
         for (i, btn) in self.answerButtons.enumerated() {
             btn.isSelected = false
-            btn.setTitle(self.questions[q].answers[i], for: .normal)
+            btn.setTitle(self.choices[q].choices[i], for: .normal)
         }
     }
-
     
     @IBAction func didChooseAnswer(_ sender: UIButton) {
         // is it the correct answer?
         let btnIndex:Int = self.answerButtons.index(of: sender)!
-        let correctAnswer:Int = self.questions[self.currentQuestion].correctAnswer
-        if btnIndex == correctAnswer {
+        let correctAnswerKey:Int = self.choices[self.currentQuestion].correctAnswerKey
+        if btnIndex == correctAnswerKey {
             self.chosenAnswerIsCorrect = true
         } else {
             self.chosenAnswerIsCorrect = false
@@ -73,22 +79,23 @@ class ViewController: UIViewController {
         sender.isSelected = !sender.isSelected
     }
     
-    
     @IBAction func didSubmitAnswer(_ sender: UIButton) {
         // if an answer is selected:
         // grade the answer then show 'next question' title
         if self.hasSubmittedAnswer {
             // go to next question
-            // make maxQuestions 0 based here
-            if self.currentQuestion < self.maxQuestions-1  {
+            if self.currentQuestion < self.maxQuestions  {
                 self.currentQuestion += 1
                 self.showNextQuestion(q:self.currentQuestion)
             }
         } else {
             // user is submitting answer
             // check if correct
-            if chosenAnswerIsCorrect {
+            if self.chosenAnswerIsCorrect {
                 self.totalScore += 1
+                self.questions[self.currentQuestion].increaseStrength()
+            } else {
+                self.questions[self.currentQuestion].decreaseStrength()
             }
             self.hasSubmittedAnswer = true
             // change button text
@@ -96,8 +103,7 @@ class ViewController: UIViewController {
             print(self.totalScore)
         }
     }
-    
-    
+
     // this is a hack to set background color for state
     func imageFromColor(colour: UIColor) -> UIImage {
         let rect = CGRect(x:0, y:0, width:1, height:1)
@@ -109,7 +115,6 @@ class ViewController: UIViewController {
         UIGraphicsEndImageContext()
         return image!
     }
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -132,12 +137,13 @@ class ViewController: UIViewController {
         )
         
         // start app
-        let questionModel = QuestionModel(maxQuestions:self.maxQuestions)
-        self.questions = questionModel.getQuestions()
+        let questionsTuple = QuestionManager(maxQuestions: self.maxQuestions, grade: self.grade).getQuestions()
+        self.questions = questionsTuple.map({ (t) in t.0 })
+        self.choices = questionsTuple.map({ (t) in t.1 })
+
+        //return (t.0 as! Question, t.1 as! Choice)
         self.showNextQuestion(q:self.currentQuestion)
-
     }
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
