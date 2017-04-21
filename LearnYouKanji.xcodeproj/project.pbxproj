@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D18A2391EAA3CB8000E38CD /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D18A2381EAA3CB8000E38CD /* SnapKit.framework */; };
 		4D30BDA61E972FDC00A37453 /* questionData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D30BDA51E972FDC00A37453 /* questionData.json */; };
 		4D46A2521E574405003F7E92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D46A2511E574405003F7E92 /* AppDelegate.swift */; };
 		4D46A2541E574405003F7E92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D46A2531E574405003F7E92 /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D18A2381EAA3CB8000E38CD /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		4D30BDA51E972FDC00A37453 /* questionData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questionData.json; sourceTree = "<group>"; };
 		4D46A24E1E574405003F7E92 /* LearnYouKanji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnYouKanji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D46A2511E574405003F7E92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 			files = (
 				4DCA40A71E8E44B300B37BF2 /* CoreData.framework in Frameworks */,
 				4DCA40A41E8D5DE700B37BF2 /* SwiftyJSON.framework in Frameworks */,
+				4D18A2391EAA3CB8000E38CD /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +109,7 @@
 		4DCA40A21E8D5DE700B37BF2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4D18A2381EAA3CB8000E38CD /* SnapKit.framework */,
 				4DCA40A61E8E44B300B37BF2 /* CoreData.framework */,
 				4DCA40A31E8D5DE700B37BF2 /* SwiftyJSON.framework */,
 			);
@@ -197,6 +201,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 			);
 			outputPaths = (
 			);
