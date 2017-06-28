@@ -63,8 +63,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if !isPreloaded {
             self.preloadData()
             defaults.set(true, forKey: "isPreloaded")
-        } else {
-            print("data is preloaded")
         }
         return true
     }
