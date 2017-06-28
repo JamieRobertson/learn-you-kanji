@@ -136,12 +136,12 @@ class QuizViewController: UIViewController {
         )
         
         // start app
-        let questionsTuple = QuestionManager(maxQuestions: self.maxQuestions, grade: self.grade).getQuestions()
-        self.questions = questionsTuple.map({ (t) in t.0 })
-        self.choices = questionsTuple.map({ (t) in t.1 })
-
-        //return (t.0 as! Question, t.1 as! Choice)
-        self.showNextQuestion(q:self.currentQuestion)
+//        let questionsTuple = QuestionManager(maxQuestions: self.maxQuestions, grade: self.grade).getQuestions()
+//        self.questions = questionsTuple.map({ (t) in t.0 })
+//        self.choices = questionsTuple.map({ (t) in t.1 })
+//
+//        //return (t.0 as! Question, t.1 as! Choice)
+//        self.showNextQuestion(q:self.currentQuestion)
     }
 
     override func didReceiveMemoryWarning() {

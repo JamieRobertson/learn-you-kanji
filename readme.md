@@ -32,6 +32,22 @@ $ sqlite3 LearnYouKanji.sqlite
 $ sqlite3 LearnYouKanji.sqlite "SELECT * FROM ZQUESTION ;" > output.txt
 ```
 
+### Important  
+(Info.plist)  
+App Transport Security is good for your users. Make sure to re-enable it prior to releasing your app for production.  
+
+### Troubleshooting  
+podfile:  
+develop from ios xcworkspace. Not xcodeproj.  
+react-navigation:  
+Add `RCTLinkingIOS` to podfile ?  
+update node (6 -> 8) ?  
+clean npm:  
+`rm -rf node_modules && npm install`
+`watchman watch-del-all`
+`node_modules/react-native/packager/packager.sh --reset-cache`
+
+
 <img src="https://github.com/JamieRobertson/learn-you-kanji/blob/master/screenshots/github/lyk-screenshot-1.png" width="320" height="480" />
 &nbsp;
 <img src="https://github.com/JamieRobertson/learn-you-kanji/blob/master/screenshots/github/lyk-screenshot-2.png" width="320" height="480" />
