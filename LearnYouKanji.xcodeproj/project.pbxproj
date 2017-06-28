@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		4D18A2391EAA3CB8000E38CD /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D18A2381EAA3CB8000E38CD /* SnapKit.framework */; };
+		4D18A23B1EAA42BD000E38CD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D18A23A1EAA42BD000E38CD /* HomeViewController.swift */; };
 		4D30BDA61E972FDC00A37453 /* questionData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D30BDA51E972FDC00A37453 /* questionData.json */; };
 		4D46A2521E574405003F7E92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D46A2511E574405003F7E92 /* AppDelegate.swift */; };
-		4D46A2541E574405003F7E92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D46A2531E574405003F7E92 /* ViewController.swift */; };
+		4D46A2541E574405003F7E92 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D46A2531E574405003F7E92 /* QuizViewController.swift */; };
 		4D46A2571E574405003F7E92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D46A2551E574405003F7E92 /* Main.storyboard */; };
 		4D46A2591E574405003F7E92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D46A2581E574405003F7E92 /* Assets.xcassets */; };
 		4D46A25C1E574405003F7E92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D46A25A1E574405003F7E92 /* LaunchScreen.storyboard */; };
@@ -27,10 +28,11 @@
 
 /* Begin PBXFileReference section */
 		4D18A2381EAA3CB8000E38CD /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		4D18A23A1EAA42BD000E38CD /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4D30BDA51E972FDC00A37453 /* questionData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questionData.json; sourceTree = "<group>"; };
 		4D46A24E1E574405003F7E92 /* LearnYouKanji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnYouKanji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D46A2511E574405003F7E92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4D46A2531E574405003F7E92 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4D46A2531E574405003F7E92 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		4D46A2561E574405003F7E92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4D46A2581E574405003F7E92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D46A25B1E574405003F7E92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -82,8 +84,9 @@
 			children = (
 				4D46A2511E574405003F7E92 /* AppDelegate.swift */,
 				4D5C7A2F1E92D6F7002AF50D /* DatabaseController.swift */,
-				4D46A2531E574405003F7E92 /* ViewController.swift */,
+				4D46A2531E574405003F7E92 /* QuizViewController.swift */,
 				4D46A2551E574405003F7E92 /* Main.storyboard */,
+				4D18A23A1EAA42BD000E38CD /* HomeViewController.swift */,
 				4D46A2581E574405003F7E92 /* Assets.xcassets */,
 				4D46A25A1E574405003F7E92 /* LaunchScreen.storyboard */,
 				4D46A25D1E574405003F7E92 /* Info.plist */,
@@ -216,11 +219,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D46A2541E574405003F7E92 /* ViewController.swift in Sources */,
+				4D46A2541E574405003F7E92 /* QuizViewController.swift in Sources */,
 				4DDF093A1E952FDE00DCD078 /* Course+CoreDataClass.swift in Sources */,
 				4D46A2641E574466003F7E92 /* QuestionManager.swift in Sources */,
 				4DDF093D1E952FDE00DCD078 /* Question+CoreDataProperties.swift in Sources */,
 				4D5C7A301E92D6F7002AF50D /* DatabaseController.swift in Sources */,
+				4D18A23B1EAA42BD000E38CD /* HomeViewController.swift in Sources */,
 				4DCA40AA1E8E539000B37BF2 /* LearnYouKanji.xcdatamodeld in Sources */,
 				4D46A2521E574405003F7E92 /* AppDelegate.swift in Sources */,
 				4DDF093B1E952FDE00DCD078 /* Course+CoreDataProperties.swift in Sources */,

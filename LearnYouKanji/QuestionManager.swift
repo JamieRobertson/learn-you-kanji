@@ -79,8 +79,6 @@ class QuestionManager {
         let questions = fetchQuestionsForGrade(g: self.grade)
         let minId:Int = Int(questions.first!.id)
         let maxId:Int = questions.count  // maxId is 1-based
-        print("minId \(minId)")
-        print("maxId \(maxId)")
 
         let questionsShuffled:[Question] = GKRandomSource.sharedRandom().arrayByShufflingObjects(
             in: questions) as! [Question]
@@ -95,9 +93,6 @@ class QuestionManager {
             while wrongAnswers.count < 4 {
                 func addWrongAnswer(randNum:Int) {
                     // check that we dont have the same answer
-                    print(randNum)
-                    print(Int(q.id))
-                    print("loop no: \(wrongAnswers.count)")
                     if randNum != Int(q.id) {
                         wrongAnswers.append(questionsShuffled[randNum].answer!)
                     } else {

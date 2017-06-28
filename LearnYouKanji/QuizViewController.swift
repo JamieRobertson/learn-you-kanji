@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  QuizViewController.swift
 //  LearnYouKanji
 //
 //  Created by Jamie Robertson on 17/02/17.
@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import GameKit
 
 
-class ViewController: UIViewController {
+class QuizViewController: UIViewController {
     
     // buttons
     @IBOutlet weak var flashCard: UILabel!
