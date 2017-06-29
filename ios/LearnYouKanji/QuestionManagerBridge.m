@@ -8,12 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import <React/RCTBridgeModule.h>
+#import <React/RCTConvert.h>
 
 @interface RCT_EXTERN_MODULE(QuestionManager, NSObject)
 
-RCT_EXTERN_METHOD(getQuestions:(nonnull NSNumber *)grade
-                  maxQuestions:(nonnull NSNumber *)maxQuestions
-                  withChoices:(BOOL)withChoices
+RCT_EXTERN_METHOD(getQuestions: (nonnull NSInteger *)forGrade
+                  maxQuestions: (nonnull NSInteger *)maxQuestions
+                  withChoices: (BOOL)withChoices
                   callback: (RCTResponseSenderBlock)callback)
+
+RCT_EXTERN_METHOD(getCourses: (RCTResponseSenderBlock)callback)
 
 @end

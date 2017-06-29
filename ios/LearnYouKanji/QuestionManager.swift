@@ -12,6 +12,12 @@ import GameKit
 import CoreData
 import React
 
+enum DBError: Error {
+    case errorFetchingData
+    case noDataFound
+}
+
+
 func getRandomNumber(maxValue:Int, offset:Int = 0) -> Int {
     // GKRandomSource generates randNum between 0 < maxValue
     // GKRandomSource does not include maxValue
@@ -46,21 +52,82 @@ class Choice {
 @objc(QuestionManager)
 class QuestionManager: NSObject {
     
-    @objc(getQuestions:maxQuestions:withChoices:callback:)
-    func getQuestions(grade:Int, maxQuestions:Int, withChoices:Bool, callback: (RCTResponseSenderBlock) ) -> Void {
+    
+    
+    func allQuestionsFromCourse(_ fromCourse:[Course]) -> [Question] {
+        // fromCourse should be array of length 1
+        let c = fromCourse.first!
+
+        var results:[Question] = c.questions?.allObjects as! [Question]
+        results.sort(by: {$0.id < $1.id})  // sort by id to create rand offset
+
+        return results
+    }
+
+    func fetchCoursesFromDB(_ forGrade:Int = 0) -> [Course] {
+        var results = [Course]()
+        let fetchRequest:NSFetchRequest<Course> = Course.fetchRequest()
+        // Specify a course ?
+        if (forGrade > 0) {
+            fetchRequest.predicate = NSPredicate(format: "%K == %i", "grade", forGrade)
+            fetchRequest.fetchLimit = 1
+            print("fetching pred")
+        }
+        // Make the DB lookup
+        do {
+            results = try DatabaseController.getContext().fetch(fetchRequest)
+            if (results.count > 0) {
+                results.sort(by: {$0.grade < $1.grade})
+            } else {
+                throw DBError.noDataFound
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+        return results
+    }
+
+    @objc(getCourses:)
+    func getCourses(callback: (RCTResponseSenderBlock) ) -> Void {
         
-        let resultsDict = [
-            ["id": 1, "question": "A", "choice": [
-                "correctAnswer": "a", "correctAnswerKey": 0, "wrongAnswers": [
-                    "a", "hello I am a long string", "I too am a string", "d"
-                ]
-                ]],
-            ["id": 2, "question": "B", "choice": [
-                "correctAnswer": "b", "correctAnswerKey": 3, "wrongAnswers": [
-                    "d", "hello I am a long string", "I too am a string", "b"
-                ]
-                ]]
-            ] as [[String : Any]];
+        let courses:[Course] = self.fetchCoursesFromDB()
+
+        let resultsDict:[[String:Any]] = courses.map({
+            (c:Course) in
+            return c.dictionaryWithValues(forKeys: ["name", "grade"])
+        })
+
+        callback([NSNull(), resultsDict])
+    }
+    
+    @objc(getQuestions:maxQuestions:withChoices:callback:)
+    func getQuestions(forGrade:NSInteger, maxQuestions:Int, withChoices:Bool, callback: (RCTResponseSenderBlock) ) -> Void {
+        
+        let courses:[Course] = self.fetchCoursesFromDB(forGrade)
+        
+        let questionsInCourse = self.allQuestionsFromCourse(courses)
+        
+        var resultsDict = [[String:Any]]()
+        if (withChoices == false) {
+            // Return just questions and answers
+            resultsDict = questionsInCourse.map({
+                (q:Question) in
+                return q.dictionaryWithValues(forKeys: ["answer", "question"])
+            })
+        } else {
+            // Return
+        }
+        
+        let minId:Int = Int(questionsInCourse.first!.id)
+        let maxId:Int = questionsInCourse.count  // maxId is 1-based
+        
+        
+
+//            ["id": 2, "question": "B", "choice": [
+//                "correctAnswer": "b", "correctAnswerKey": 3, "wrongAnswers": [
+//                    "d", "hello I am a long string", "I too am a string", "b"
+//                ]
+
         
         callback([NSNull(), resultsDict])
     }

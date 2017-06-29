@@ -1,5 +1,7 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import { ActivityIndicator, Alert, Button, NativeModules, ScrollView, Text, View } from 'react-native';
+import { Col, Row, Grid } from "react-native-easy-grid";
 import { styles } from '../styles';
 
 /** 
@@ -8,16 +10,13 @@ import { styles } from '../styles';
  */
 // const data = [
 //     { 'grade': 1, 'name': 'foo 1' },
-//     { 'grade': 2, 'name': 'foo 2' },
-//     { 'grade': 3, 'name': 'foo 3' },
-//     { 'grade': 4, 'name': 'foo 4' },
-//     { 'grade': 5, 'name': 'foo 5' }
+// ...
 // ]
 
 class HomeScreen extends Component {
   static navigationOptions = {
     title: 'Home'
-    //,header: null
+    // ,header: null
   };
   constructor(props) {
     super(props);
@@ -33,28 +32,53 @@ class HomeScreen extends Component {
     let { isLoaded, data } = this.state;
 
     let QuestionManager = NativeModules.QuestionManager;
-    QuestionManager.getQuestions(maxQuestions, course, withChoices, (err, res) => {
+    QuestionManager.getCourses((err, res) => {
       console.log(err);
       console.log(res);
-      this.setState({data: res})
-      this.setState({isLoaded: true});
+      this.setState({data: res}, () => {
+        this.setState({isLoaded: true})  
+      });
     });    
+  }
+  renderCourseItems() {
+    const { navigate } = this.props.navigation;
+    let { data } = this.state;
+
+    return data.map(function (course, i) {
+      return (
+        <View key={i}>
+          <Text style={ [styles.h3] }>
+            { course.name }
+          </Text>
+          <View style={ [styles.row] }>
+            <Button 
+              title='Take test'
+              onPress={ () => navigate('Quiz', { courseGrade: course.grade }) }
+            />
+            <Button 
+              title='Practice'
+              onPress={ () => navigate('Practice', { courseGrade: course.grade }) }
+            />
+          </View>
+        </View>
+      );
+    });
   }
   render() {
     let { isLoaded } = this.state;
 
     if (!isLoaded) {
       return (
-        <View style={[styles.container]}>
+        <Grid>
           <ActivityIndicator size='large' />
-        </View>
+        </Grid>
       );
     }
 
     return (
-      <View style={[styles.container]}>
-        <Text>Loaded</Text>
-      </View>
+      <ScrollView>
+        { this.renderCourseItems.bind(this)() }
+      </ScrollView>
     );
   }
 }

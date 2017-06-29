@@ -1,3 +1,4 @@
 import HomeScreen from './HomeScreen';
+import QuizScreen from './QuizScreen';
 
-export { HomeScreen };
+export { HomeScreen, QuizScreen };

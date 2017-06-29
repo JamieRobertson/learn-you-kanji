@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4D18A2391EAA3CB8000E38CD /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D18A2381EAA3CB8000E38CD /* SnapKit.framework */; };
 		4D18A23B1EAA42BD000E38CD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D18A23A1EAA42BD000E38CD /* HomeViewController.swift */; };
+		4D2878481F059F1100EC093D /* questionData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D2878471F059F1100EC093D /* questionData.plist */; };
 		4D30BDA61E972FDC00A37453 /* questionData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D30BDA51E972FDC00A37453 /* questionData.json */; };
 		4D357EB51F04441400F657AB /* QuestionManagerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D357EB41F04441400F657AB /* QuestionManagerBridge.m */; };
 		4D46A2521E574405003F7E92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D46A2511E574405003F7E92 /* AppDelegate.swift */; };
@@ -35,6 +36,7 @@
 		4B1383D585586269A611E21B /* Pods_LearnYouKanji.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearnYouKanji.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D18A2381EAA3CB8000E38CD /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		4D18A23A1EAA42BD000E38CD /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4D2878471F059F1100EC093D /* questionData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = questionData.plist; sourceTree = "<group>"; };
 		4D30BDA51E972FDC00A37453 /* questionData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questionData.json; sourceTree = "<group>"; };
 		4D357EB31F04441400F657AB /* LearnYouKanji-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LearnYouKanji-Bridging-Header.h"; sourceTree = "<group>"; };
 		4D357EB41F04441400F657AB /* QuestionManagerBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionManagerBridge.m; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				4D30BDA51E972FDC00A37453 /* questionData.json */,
+				4D2878471F059F1100EC093D /* questionData.plist */,
 			);
 			name = data;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			files = (
 				4D46A25C1E574405003F7E92 /* LaunchScreen.storyboard in Resources */,
 				4D46A2591E574405003F7E92 /* Assets.xcassets in Resources */,
+				4D2878481F059F1100EC093D /* questionData.plist in Resources */,
 				4D46A2571E574405003F7E92 /* Main.storyboard in Resources */,
 				4D30BDA61E972FDC00A37453 /* questionData.json in Resources */,
 			);
