@@ -39,9 +39,12 @@ App Transport Security is good for your users. Make sure to re-enable it prior t
 ### Troubleshooting  
 podfile:  
 develop from ios xcworkspace. Not xcodeproj.  
+`pod update` after editing (source of much problem)  
+
 react-navigation:  
 Add `RCTLinkingIOS` to podfile ?  
 update node (6 -> 8) ?  
+
 clean npm:  
 `rm -rf node_modules && npm install`
 `watchman watch-del-all`
