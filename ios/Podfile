@@ -14,7 +14,7 @@ target 'LearnYouKanji' do
     'Core',
     'BatchedBridge', # bridge ?
     # 'CxxBridge', # bridge ?
-    # 'RCTAnimation', # Error with this one
+    'RCTAnimation', # Error with this one
     # 'RCTDeviceEventEmitter', # deprecated ?
     'RCTPushNotification',
     'RCTImage',
