@@ -19,4 +19,6 @@ RCT_EXTERN_METHOD(getQuestions: (nonnull NSInteger *)forGrade
 
 RCT_EXTERN_METHOD(getCourses: (RCTResponseSenderBlock)callback)
 
+// RCT_EXTERN_METHOD(strengthenQuestion: (nonnull NSInteger *)questionId)
+
 @end

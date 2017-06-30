@@ -40,6 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             forEntityName: "Question", into: DatabaseController.getContext()
                         ) as! Question
                         question.id = questionId; questionId += 1
+                        question.strength = 0
                         question.question = questionObject["question"].stringValue
                         question.answer = questionObject["answer"].stringValue
                         course.addToQuestions(question)

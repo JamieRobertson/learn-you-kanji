@@ -5,6 +5,12 @@ import { Col, Row, Grid } from "react-native-easy-grid";
 import { styles } from '../styles';
 
 
+// { answer: 'eye',
+//     correctAnswerKey: 2,
+//     choices: [ 'dog', 'book', 'eye', 'eye', 'fire' ],
+//     id: 75,
+//     question: '目' },
+
 class QuizScreen extends Component {
   static navigationOptions = {
     // title: 'Quiz'
@@ -40,8 +46,10 @@ class QuizScreen extends Component {
     return data.map((question, i) => {
       return (
         <View key={i}>
+          <Text>{ question.id }</Text>
           <Text>{ question.question }</Text>
           <Text>{ question.answer }</Text>
+          <Text>{ question.correctAnswerKey }</Text>
         </View>
       );
     });

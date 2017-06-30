@@ -26,7 +26,6 @@ func getRandomNumber(maxValue:Int, offset:Int = 0) -> Int {
     return randNum + offset
 }
 
-
 class Choice {
     var wrongAnswers = [String]()
     var correctAnswer:String
@@ -51,8 +50,31 @@ class Choice {
 
 @objc(QuestionManager)
 class QuestionManager: NSObject {
-    
-    
+
+    func addChoicesToQuestions(_ questions:[Question], maxQuestions:Int, minId:Int, maxId:Int) -> [[String: Any]] {
+        return questions[0...maxQuestions].map({
+            (q:Question) in
+
+            var wrongAnswers = [String]()
+
+            while wrongAnswers.count < 4 {
+                func addWrongAnswer(randNum:Int) {
+                    // check that we dont have the same answer
+                    if randNum != Int(q.id) {
+                        wrongAnswers.append(questions[randNum].answer!)
+                    } else {
+                        addWrongAnswer(randNum: getRandomNumber(maxValue: maxId, offset: minId))
+                    }
+                }
+                addWrongAnswer(randNum: getRandomNumber(maxValue: maxId, offset: minId))
+            }
+            // Choice.choices returns wrong answers + correct answer key
+            let c = Choice(correctAnswer: q.answer!, wrongAnswers: wrongAnswers)
+
+            return ["id": Int(q.id), "question": q.question!, "answer": q.answer!, 
+                    "correctAnswerKey": c.correctAnswerKey, "choices": c.choices]
+        })
+    }
     
     func allQuestionsFromCourse(_ fromCourse:[Course]) -> [Question] {
         // fromCourse should be array of length 1
@@ -71,7 +93,6 @@ class QuestionManager: NSObject {
         if (forGrade > 0) {
             fetchRequest.predicate = NSPredicate(format: "%K == %i", "grade", forGrade)
             fetchRequest.fetchLimit = 1
-            print("fetching pred")
         }
         // Make the DB lookup
         do {
@@ -86,6 +107,35 @@ class QuestionManager: NSObject {
         }
         return results
     }
+
+    // @objc(strengthenQuestion:)
+    // func strengthenQuestion(questionId:Int) {
+    //     // Keep a log of which questions user correctly answered
+
+    //     let fetchRequest:NSFetchRequest<Question> = Question.fetchRequest()
+    //     fetchRequest.predicate = NSPredicate(format: "%K == %i", "id", questionId)
+    //     fetchRequest.fetchLimit = 1
+    //     // Make the DB lookup
+    //     do {
+    //         let results = try DatabaseController.getContext().fetch(fetchRequest)
+    //         if (results.count > 0) {
+    //             let questionToStrengthen = results[0]
+    //             let currentStrength = questionToStrengthen.value(forKey: "strength") as! Int
+    //             questionToStrengthen.setValue(value: currentStrength+1, forKey: "strength")
+    //             // Save the context
+    //             do {
+    //                 try DatabaseController.saveContext()
+    //                 print("saved!")
+    //             } catch let error as NSError  {
+    //                 print("Could not save \(error), \(error.userInfo)")
+    //             }
+    //         } else {
+    //             throw DBError.noDataFound
+    //         }
+    //     } catch {
+    //         print(error.localizedDescription)
+    //     }
+    // }
 
     @objc(getCourses:)
     func getCourses(callback: (RCTResponseSenderBlock) ) -> Void {
@@ -105,95 +155,30 @@ class QuestionManager: NSObject {
         
         let courses:[Course] = self.fetchCoursesFromDB(forGrade)
         
-        let questionsInCourse = self.allQuestionsFromCourse(courses)
-        
-        var resultsDict = [[String:Any]]()
-        if (withChoices == false) {
-            // Return just questions and answers
-            resultsDict = questionsInCourse.map({
-                (q:Question) in
-                return q.dictionaryWithValues(forKeys: ["answer", "question"])
-            })
-        } else {
-            // Return
-        }
-        
+        let questionsInCourse:[Question] = self.allQuestionsFromCourse(courses)
         let minId:Int = Int(questionsInCourse.first!.id)
         let maxId:Int = questionsInCourse.count  // maxId is 1-based
-        
-        
 
-//            ["id": 2, "question": "B", "choice": [
-//                "correctAnswer": "b", "correctAnswerKey": 3, "wrongAnswers": [
-//                    "d", "hello I am a long string", "I too am a string", "b"
-//                ]
+        let questionsShuffled:[Question] = GKRandomSource.sharedRandom().arrayByShufflingObjects(
+           in: questionsInCourse) as! [Question]
+        
+        // Define results dictionary in outer scope
+        var resultsDict = [[String:Any]]()
 
+        if (withChoices == false) {
+            // Return just questions and answers
+            resultsDict = questionsShuffled.map({
+                (q:Question) in
+                return q.dictionaryWithValues(forKeys: ["question", "answer", "id"])
+            })
+        } else {
+            // Return questions with choices
+            resultsDict = self.addChoicesToQuestions(questionsShuffled, 
+                                                     maxQuestions: maxQuestions, 
+                                                     minId:minId, 
+                                                     maxId:maxId)
+        }
         
         callback([NSNull(), resultsDict])
     }
 }
-
-//class QuestionManager {
-//    var maxQuestions:Int
-//    var grade:Int
-//    
-//    init(maxQuestions:Int, grade:Int) {
-//        self.maxQuestions = maxQuestions
-//        self.grade = grade
-//    }
-//    
-//    func fetchQuestionsForGrade(g:Int) -> [Question] {
-//        // Fetch Course from CoreData
-//        let fetchRequest:NSFetchRequest<Course> = Course.fetchRequest()
-//        fetchRequest.predicate = NSPredicate(format: "%K == %i", "grade", g)
-//        fetchRequest.fetchLimit = 1
-//        
-//        var questionsInCourse = [Question]()  // init in outer scope
-//        do {
-//            let results:[Course] = try DatabaseController.getContext().fetch(fetchRequest)
-//            // Fetch related questions if course exists
-//            if (results.count > 0) {
-//                let firstResult = results.first!
-//                questionsInCourse = firstResult.questions?.allObjects as! [Question]
-//                questionsInCourse.sort(by: {$0.id < $1.id})  // sort by id to create rand offset
-//            } else {
-//                print("No courses for that grade found")
-//            }
-//        } catch {
-//            print(error.localizedDescription)
-//        }
-//        return questionsInCourse
-//    }
-//
-//    func getQuestions() -> [(Question, Choice)] {
-//        let questions = fetchQuestionsForGrade(g: self.grade)
-//        let minId:Int = Int(questions.first!.id)
-//        let maxId:Int = questions.count  // maxId is 1-based
-//
-//        let questionsShuffled:[Question] = GKRandomSource.sharedRandom().arrayByShufflingObjects(
-//            in: questions) as! [Question]
-//        
-//        // Return array of tuples: 
-//        // Value 1 is Question instance. Value 2 is Choice instance
-//        return questionsShuffled[0...self.maxQuestions].map({
-//            (q:Question) in
-//            
-//            var wrongAnswers = [String]()
-//            
-//            while wrongAnswers.count < 4 {
-//                func addWrongAnswer(randNum:Int) {
-//                    // check that we dont have the same answer
-//                    if randNum != Int(q.id) {
-//                        wrongAnswers.append(questionsShuffled[randNum].answer!)
-//                    } else {
-//                        addWrongAnswer(randNum: getRandomNumber(maxValue: maxId, offset: minId))
-//                    }
-//                }
-//                addWrongAnswer(randNum: getRandomNumber(maxValue: maxId, offset: minId))
-//            }
-//            
-//            let c = Choice(correctAnswer: q.answer!, wrongAnswers: wrongAnswers)
-//            return (q, c)
-//        })
-//    }
-//}
