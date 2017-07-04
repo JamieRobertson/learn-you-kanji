@@ -108,8 +108,10 @@ class QuizScreen extends Component {
       this.setState({chosenAnswerIsCorrect: false});
     }
   }
-  renderChoices(choices, correctAnswerKey) {
-    let { chosenAnswer } = this.state;
+  renderChoices(choices, correctAnswerKey, scrollItemId) {
+    let { chosenAnswer, currentQuestion } = this.state;
+    // isActive style - must check current 
+    // question currentQuestion id to be more specific
 
     return choices.map((choice, i) => {
       return (
@@ -118,7 +120,7 @@ class QuizScreen extends Component {
           title={ choice }
           choiceIndex={ i }
           isCorrect={ correctAnswerKey === i }
-          isActive={ chosenAnswer === i }
+          isActive={ currentQuestion === scrollItemId && chosenAnswer === i }
           onPress={ this.onChooseAnswer.bind(this) }
         />
       );
@@ -140,9 +142,10 @@ class QuizScreen extends Component {
           </View>
           <View style={[styles.row, styles.floatLeft]}>
             { this.renderChoices.bind(
-                this, 
-                question.choices, 
-                question.correctAnswerKey
+                this,
+                question.choices,
+                question.correctAnswerKey,
+                i
               )() }
           </View>
         </View>

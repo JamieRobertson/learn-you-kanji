@@ -10,12 +10,11 @@ class Choice extends React.Component {
   }
   render() {
     let { isActive, title } = this.props;
-    let k = this.props.k || false;
     let buttonStyle = isActive ? [styles.choiceItem, styles.choiceItem_active] : [styles.choiceItem];
     let textStyle = isActive ? [styles.p, {color: 'white'}] : [styles.p];
 
     return (
-      <TouchableHighlight        
+      <TouchableHighlight
         style={ buttonStyle }
         onPress={ this.handleOnPress.bind(this) }
         underlayColor={ colors.blue }
