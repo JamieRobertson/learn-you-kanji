@@ -61,7 +61,8 @@ class QuestionManager: NSObject {
                 func addWrongAnswer(randNum:Int) {
                     // check that we dont have the same answer
                     if randNum != Int(q.id) {
-                        wrongAnswers.append(questions[randNum].answer!)
+                        let newAnswer: String? = questions[randNum].answer
+                        wrongAnswers.append(newAnswer!)
                     } else {
                         addWrongAnswer(randNum: getRandomNumber(maxValue: maxId, offset: minId))
                     }

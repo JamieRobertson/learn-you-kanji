@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { ActivityIndicator, Alert, Button, NativeModules, ScrollView, Text, View } from 'react-native';
-import { Col, Row, Grid } from "react-native-easy-grid";
+
+import { ActivityIndicator, Button, NativeModules, ScrollView, Text, View } from 'react-native';
+import { Col, Row, Grid } from 'react-native-easy-grid';
 import { styles } from '../styles';
 
 /** 
@@ -76,7 +77,7 @@ class HomeScreen extends Component {
     }
 
     return (
-      <ScrollView>
+      <ScrollView contentContainerStyle={ [styles.container, styles.alignTop, styles.headerSpacing] }>
         { this.renderCourseItems.bind(this)() }
       </ScrollView>
     );

@@ -58,6 +58,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
+        // Remove status bar in info.plist:
+        // "View controller-based status bar appearance" = NO
+        // "Status bar is initially hidden" = YES
+
         // set defaults:
         let defaults = UserDefaults.standard
         let isPreloaded = defaults.bool(forKey: "isPreloaded")
@@ -66,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.preloadData()
             defaults.set(true, forKey: "isPreloaded")
         }
-        
+
         // start app with React Native:
         let jsCodeLocation = URL(string: "http://localhost:8081/index.ios.bundle?platform=ios")
         
@@ -83,6 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         rootViewController.view = rootView
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
+        // self.window?.backgroundColor = UIColor.white
         self.window?.rootViewController = rootViewController
         self.window?.makeKeyAndVisible()
         
