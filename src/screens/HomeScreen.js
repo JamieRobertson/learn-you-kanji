@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import { ActivityIndicator, Button, Image, NativeModules, ScrollView, Text, View } from 'react-native';
 
-import { ActivityIndicator, Button, NativeModules, ScrollView, Text, View } from 'react-native';
-import { Col, Row, Grid } from 'react-native-easy-grid';
-import { styles } from '../styles';
+import { Row, Col, Btn } from '../components';
+import { styles, colors } from '../styles';
 
 /** 
  * Fetch all course data from CoreData.
@@ -16,8 +16,9 @@ import { styles } from '../styles';
 
 class HomeScreen extends Component {
   static navigationOptions = {
-    title: 'Home'
-    // ,header: null
+    title: 'Home',
+    header: null,
+    gesturesEnabled: false
   };
   constructor(props) {
     super(props);
@@ -47,20 +48,45 @@ class HomeScreen extends Component {
 
     return data.map(function (course, i) {
       return (
-        <View key={i}>
-          <Text style={ [styles.h3] }>
-            { course.name }
-          </Text>
-          <View style={ [styles.row] }>
-            <Button 
-              title='Take test'
-              onPress={ () => navigate('Quiz', { courseGrade: course.grade }) }
-            />
-            <Button 
-              title='Practice'
-              onPress={ () => navigate('Practice', { courseGrade: course.grade }) }
-            />
-          </View>
+        <View key={i} style={[ styles.contentCard, styles.dropShadow ]}>
+          <Row>
+            <Col flex={1}>
+              <Image 
+                source={require('../static/img/close-icon.png')}
+                style={styles.icon}
+              />
+            </Col>
+            <Col flex={11}>
+              <Text style={ [styles.h3] }>
+                { course.name }
+              </Text>
+            </Col>
+          </Row>
+          <Row>
+            <Col flex={12}>
+              <Text style={ [styles.p] }>
+                Lorem ipsum dolor set amat.
+              </Text>
+            </Col>
+          </Row>
+          <Row style={[{borderColor: colors.grey, borderTopWidth: 1 }]}>
+            <Col flex={6} style={[{borderColor: colors.grey, borderRightWidth: 1 }]}>
+              <Btn
+                title='Practice'
+                buttonStyle={[styles.btnGhost, styles.btnSm]}
+                textStyle={[{color: colors.blue, fontWeight: '500'}]}
+                onPress={ () => navigate('Practice', { courseGrade: course.grade }) }
+              />
+            </Col>
+            <Col flex={6}>
+              <Btn
+                title='Test'
+                buttonStyle={[styles.btnGhost, styles.btnSm]}
+                textStyle={[{color: colors.blue, fontWeight: '500'}]}
+                onPress={ () => navigate('Quiz', { courseGrade: course.grade }) }
+              />
+            </Col>
+          </Row>
         </View>
       );
     });
@@ -70,15 +96,17 @@ class HomeScreen extends Component {
 
     if (!isLoaded) {
       return (
-        <Grid>
+        <Col alignItems={'center'} justifyContent={'center'} flex={1}>
           <ActivityIndicator size='large' />
-        </Grid>
+        </Col>
       );
     }
 
     return (
-      <ScrollView contentContainerStyle={ [styles.container, styles.alignTop, styles.headerSpacing] }>
-        { this.renderCourseItems.bind(this)() }
+      <ScrollView>
+        <Col style={[styles.headerMargin, {paddingTop: 15, paddingBottom: 60}]}>
+          { this.renderCourseItems.bind(this)() }
+        </Col>
       </ScrollView>
     );
   }

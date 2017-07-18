@@ -1,20 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import { Alert, Image, ProgressViewIOS, TouchableOpacity, View } from 'react-native';
+import { Col, Row } from '../components';
 import { styles, colors } from '../styles';
 
-// TODO:
-// Add close button - will call alert then go home
 
-class QuizHeader extends React.Component {
+class QuizHeader extends Component {
   handleOnPress() {
-    const { navigate } = this.props.navigation;
+    const { navigate, goBack } = this.props.navigation;
 
     Alert.alert(
       'Are you sure you want to quit?', 
       '',
       [
         { text: 'Cancel', onPress: () => {}, style: 'cancel' },
-        { text: 'Quit', onPress: () => navigate('Home') }
+        { text: 'Quit', onPress: () => goBack() }
       ],
       { cancelable: true }
     );
@@ -23,8 +24,8 @@ class QuizHeader extends React.Component {
     let { progress } = this.props;
 
     return (
-      <View style={[styles.row, {alignItems: 'stretch', paddingTop: 15}]}>
-        <View style={iconSize}>
+      <Row alignItems={'center'} style={[styles.header]}>
+        <View>
           <TouchableOpacity
             onPress={ this.handleOnPress.bind(this) }
             style={{opacity: 0.3}}
@@ -44,7 +45,7 @@ class QuizHeader extends React.Component {
             // trackTintColor={colors.greyLight}
           />
         </View>
-      </View>
+      </Row>
     );
   }
 }

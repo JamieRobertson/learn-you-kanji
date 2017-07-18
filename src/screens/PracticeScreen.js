@@ -1,9 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import { ActivityIndicator, FlatList, NativeModules, Text, View } from 'react-native';
-import { Col, Row, Grid } from 'react-native-easy-grid';
-import { Flipper, H1 } from '../components';
+import { ActivityIndicator, Button, FlatList, NativeModules, Text, View } from 'react-native';
+import { Col, Flipper, H1, Row } from '../components';
 import Dimensions from 'Dimensions';
 import { styles } from '../styles';
 
@@ -14,14 +13,38 @@ import { styles } from '../styles';
  */
 
 const {width, height} = Dimensions.get('window');
-// const listItemWidth = (width * 0.75);
+// const widthPadding = 30;
+// const gridWidth = width - widthPadding;
+const listItemWidth = (width * 0.74);
+const listItemSpacing = ((width - listItemWidth) / 2)
 
 class PracticeScreen extends PureComponent {
   static navigationOptions = {
-    title: 'Kanji practice'
+    title: 'Kanji practice',
+    headerBackTitle: 'Home',
+    gesturesEnabled: false
   };
-  renderItem = ({item}) => (
-    <View style={[styles.container, styles.alignTop, {'width': width}]}>
+  renderFooter = (navigation) => (
+    <Col flex={1} alignItems={'center'} justifyContent={'flex-start'} 
+      style={[{'width': listItemWidth, paddingHorizontal: 0, paddingTop: 30}]}
+    >
+      <Text style={[styles.p]}>
+        Congratulations!
+        {'\n\n'}
+        You've reached the end of all the flashcards in this section.
+        {'\n\n'}
+        Continue your practice by shuffling these kanji cards.
+      </Text>
+      <Button 
+        title='Shuffle cards' 
+        onPress={ () => navigation.navigate('Practice', { courseGrade: navigation.state.params.courseGrade }) }
+      />
+    </Col>
+  );
+  renderItem = ({item, index}) => (
+    <Col flex={1} alignItems={'center'} justifyContent={'center'} 
+      style={[{'width': listItemWidth, paddingHorizontal: 0, backgroundColor: index % 2 === 0 ? 'teal':'tomato'}]}
+    >
       <Flipper 
         id={item.id}
       >
@@ -33,7 +56,7 @@ class PracticeScreen extends PureComponent {
           { item.answer }
         </Text>
       </Flipper>
-    </View>
+    </Col>
   );
   constructor(props) {
     super(props);
@@ -61,12 +84,13 @@ class PracticeScreen extends PureComponent {
   }
   render() {
     let { isLoaded, data } = this.state;
+    // const { navigate } = this.props.navigation;
 
     if (!isLoaded) {
       return (
-        <View style={[styles.container]}>
+        <Col alignItems={'center'} justifyContent={'center'} flex={1}>
           <ActivityIndicator size='large' />
-        </View>
+        </Col>
       );
     }
 
@@ -77,12 +101,27 @@ class PracticeScreen extends PureComponent {
         renderItem={this.renderItem}
         horizontal={true}
         pagingEnabled={true}
-        initialNumToRender={1}
-        style={[styles.row]}
-        snapToAlignment={'center'}
-        snapToInterval={1}
+        initialNumToRender={3}
+        contentContainerStyle={
+          [{flexDirection: 'row', alignItems: 'center', paddingHorizontal: listItemSpacing}]
+        }
+        // snapToAlignment={'start'}
+        // centerContent={true} // not applicable
+        // contentOffset={{x: -listItemSpacing}}
+        // contentInset={{left: 100}}
+        snapToInterval={width * 0.5}
+        ListFooterComponent={this.renderFooter.bind(this, this.props.navigation)}
       />
     );
+    // content Conainer style 
+    //  justifyContent: 'space-around',
+
+    // For list offset 
+    // , paddingHorizontal: listItemSpacing
+
+    // , marginLeft: listItemSpacing
+    // ListHeaderComponent  // spacing
+    // ListFooterComponent  // end of list message - 'shuffle and start again'
 
   }
 }

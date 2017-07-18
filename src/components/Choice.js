@@ -10,7 +10,9 @@ class Choice extends React.Component {
   }
   render() {
     let { isActive, title } = this.props;
-    let buttonStyle = isActive ? [styles.choiceItem, styles.choiceItem_active] : [styles.choiceItem];
+    let buttonStyle = isActive ? [
+        styles.choiceItem, styles.dropShadow, styles.choiceItem_active
+      ] : [styles.choiceItem, styles.dropShadow];
     let textStyle = isActive ? [styles.p, {color: 'white'}] : [styles.p];
 
     return (

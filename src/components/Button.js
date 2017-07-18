@@ -2,10 +2,6 @@ import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 import { styles } from '../styles';
 
-// constructor(props) {
-//   super();
-// }
-// should component update ?
 
 class Btn extends React.Component {
   handleOnPress() {
@@ -15,7 +11,7 @@ class Btn extends React.Component {
   render() {
     let { title, disabled } = this.props;
     
-    let textStyle = this.props.buttonStyle || [];
+    let textStyle = this.props.textStyle || [];
     let buttonStyle = this.props.buttonStyle || [];
     let k = this.props.k || false;
     // inherit styles

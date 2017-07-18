@@ -1,29 +1,33 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { ActivityIndicator, Alert, NativeModules, ScrollView, Text, View } from 'react-native';
-import { Btn, Choice, H1, QuizHeader } from '../components';
-import { Col, Row, Grid } from 'react-native-easy-grid';
+import { 
+  ActivityIndicator, Modal, NativeModules, 
+  ScrollView, Text, TouchableOpacity, View 
+} from 'react-native';
+
+import { 
+  Btn, Choice, Col, H1, Row, QuizHeader, QuizModal 
+} from '../components';
+
 import Dimensions from 'Dimensions';
-import { styles } from '../styles';
+import { styles, colors } from '../styles';
 
 /**
  * Render questions with multiple choices.
  * If you select the correct choice you get a point.
  */
 
+const maxQuestions = 10;
 const {width, height} = Dimensions.get('window');
 const widthPadding = 30;
+const gridWidth = width - widthPadding;
 
-// { answer: 'eye', correctAnswerKey: 2,
-//     choices: [ 'dog', 'book', 'eye', 'eye', 'fire' ],
-//     id: 75,
-//     question: '目' },
 
 class QuizScreen extends Component {
   static navigationOptions = {
-    // title: 'Quiz'
-    header: null
+    header: null,
+    gesturesEnabled: false
   };
   constructor(props) {
     super(props);
@@ -34,13 +38,14 @@ class QuizScreen extends Component {
       currentQuestion: 0,
       chosenAnswer: null,
       hasSubmittedAnswer: false,
-      chosenAnswerIsCorrect: false
+      chosenAnswerIsCorrect: false, 
+      isModalVisible: false
     }
   }
   componentDidMount() {
     const { params } = this.props.navigation.state;
 
-    this.loadData.bind(this, params.courseGrade, maxQuestions=10, withChoices=true)();
+    this.loadData.bind(this, params.courseGrade, maxQuestions=maxQuestions, withChoices=true)();
   }
   loadData(forGrade, maxQuestions, withChoices) {
     let { isLoaded, data } = this.state;
@@ -53,6 +58,9 @@ class QuizScreen extends Component {
         this.setState({isLoaded: true});
       });
     });    
+  }
+  setModalVisibility(visible) {
+    this.setState({isModalVisible: visible});
   }
   showNextQuestion() {
     let { currentQuestion } = this.state;
@@ -78,6 +86,7 @@ class QuizScreen extends Component {
     if (hasSubmittedAnswer) {
       // go to next question
       if (currentQuestion < (data.length - 1)) {
+        this.setModalVisibility(false);
         this.showNextQuestion();
       } else {
         // go to score screen
@@ -87,6 +96,7 @@ class QuizScreen extends Component {
     // user is submitting answer
     } else {
       this.setState({hasSubmittedAnswer: true});
+      this.setModalVisibility(true);
       // check if correct
       if (chosenAnswerIsCorrect) {
         this.setState({totalScore: totalScore + 1});
@@ -106,6 +116,26 @@ class QuizScreen extends Component {
       this.setState({chosenAnswerIsCorrect: true});
     } else {
       this.setState({chosenAnswerIsCorrect: false});
+    }
+  }
+  renderModal() {
+    let { data, currentQuestion, isModalVisible, chosenAnswerIsCorrect } = this.state;
+    let modalText = {
+      correct: 'Correct!',
+      incorrect: 'Correct answer:\n'+ data[currentQuestion].answer
+    };
+
+    //     onPress={() => this.setModalVisibility(false)}
+    if (isModalVisible) {
+      return (
+        <TouchableOpacity style={[styles.modalWrapper]}>
+          <View style={[styles.modal, styles.dropShadow, {backgroundColor: chosenAnswerIsCorrect ? colors.greenLight : colors.redLight}]}>
+            <Text style={[styles.modalText]}>
+              { chosenAnswerIsCorrect ? modalText.correct : modalText.incorrect }
+            </Text>
+          </View>
+        </TouchableOpacity>
+      );
     }
   }
   renderChoices(choices, correctAnswerKey, scrollItemId) {
@@ -129,54 +159,76 @@ class QuizScreen extends Component {
   renderQuizItems() {
     let { data } = this.state;
 
+    // <Text>{ question.answer }</Text>
+    // <Text>{ question.correctAnswerKey }</Text>
+
     return data.map((question, i) => {
       return (
-        <View 
+        <Col 
           key={question.id}
-          style={[styles.alignTop, {width: width - widthPadding}]}
+          alignItems={'center'}
+          style={[{width: gridWidth}]}
         >
-          <View style={{flex: 4, paddingBottom: 15}}>
-            <H1 title={ question.question } />
-            <Text>{ question.answer }</Text>
-            <Text>{ question.correctAnswerKey }</Text>
-          </View>
-          <View style={[styles.row, styles.floatLeft]}>
-            { this.renderChoices.bind(
-                this,
-                question.choices,
-                question.correctAnswerKey,
-                i
-              )() }
-          </View>
-        </View>
+          <H1 title={ question.question } />
+          
+          <Row 
+            justifyContent={'center'} 
+            style={[{flexWrap: 'wrap'}]}
+          >
+            {this.renderChoices.bind( 
+              this,
+              question.choices,
+              question.correctAnswerKey,
+              i 
+            )()}
+          </Row>
+        </Col>
       );
     });
   }
   render() {
-    let { isLoaded } = this.state;
+    let { navigation } = this.props;
+    let { 
+      isLoaded, chosenAnswer, 
+      hasSubmittedAnswer, currentQuestion 
+    } = this.state;
+
+    let submitButtonStyle = chosenAnswer === null ? [styles.btnDisabled] : [styles.btnSuccess];
 
     if (!isLoaded) {
       return (
-        <View style={[styles.container]}>
+         <Col alignItems={'center'} justifyContent={'center'} flex={1}>
           <ActivityIndicator size='large' />
-        </View>
+        </Col>
       );
     }
 
     return (
-      <View>
-        <ScrollView
-          ref={(x) => this._scrollView = x}
-          horizontal={true}
-          pagingEnabled={true}
-          scrollEnabled={false}
-          showsHorizontalScrollIndicator={false}
-          snapToAlignment={'center'}
-          snapToInterval={1}
-        >
-          { this.renderQuizItems.bind(this)() }
-        </ScrollView>
-      </View>
+      <Col alignItems={'center'} flex={1}>
+        <QuizHeader navigation={navigation} progress={currentQuestion / maxQuestions} />
+        <Row>
+          <ScrollView
+            ref={(x) => this._scrollView = x}
+            horizontal={true}
+            pagingEnabled={true}
+            scrollEnabled={false}
+            showsHorizontalScrollIndicator={false}
+            snapToAlignment={'center'}
+            snapToInterval={1}
+          >
+            { this.renderQuizItems.bind(this)() }
+          </ScrollView>
+        </Row>
+        <Row style={[{position: 'absolute', bottom: 5}]}>
+          <Btn 
+            title={ hasSubmittedAnswer === false ? 'Check answer' : 'Next question' } 
+            buttonStyle={ submitButtonStyle }
+            disabled={ chosenAnswer === null ? true : false}
+            onPress={ this.onSubmitAnswer.bind(this) }
+          />
+        </Row>
+        { this.renderModal.bind(this)() }
+      </Col>
     );
   }
 }
