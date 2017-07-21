@@ -23,7 +23,7 @@ const colors = {
 const $borderRadius = 10;
 
 const $fontSize = {
-  h1: 140,
+  h1: 130,
   h2: 45,
   h3: 30,
   h4: 21,
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     width: 33,
-    height: 33, 
+    height: 33,
     marginVertical: 2
   },
   dropShadow: {
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     width: '100%',
     borderRadius: $borderRadius,
     paddingTop: 15,
-    marginBottom: 10, 
+    marginBottom: 10,
     minHeight: 50
   },
   btnDisabled: {
@@ -110,21 +110,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: 'bold',
     fontSize: 16
-  },
-  flipper: {
-    marginBottom: 30,
-    backgroundColor: colors.white,
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderColor: colors.greyLight,
-    borderRadius: 2,
-    padding: 15,
-    width: '80%'
-  },
-  flipperBack: {
-    // position: 'absolute',
-    // top: 0, right: 0, left: 0, bottom: 0,
-    textAlign: 'center'
   },
   contentCard: {
     paddingTop: 12,

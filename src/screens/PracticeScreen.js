@@ -2,15 +2,13 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 import { ActivityIndicator, Button, FlatList, NativeModules, Text, View } from 'react-native';
-import { Col, Flipper, H1, Row } from '../components';
+import { Col, Flipper, Row } from '../components';
 import Dimensions from 'Dimensions';
 import { styles } from '../styles';
 
-/**
- * Simple practice screen.
- * Load all questions and answers (shuffled) for course.
- * Swipe back and forth to next/previous question.
- */
+// Simple practice screen.
+// Load all questions and answers (shuffled) for course.
+// Swipe back and forth to next/previous question.
 
 const {width, height} = Dimensions.get('window');
 // const widthPadding = 30;
@@ -29,10 +27,8 @@ class PracticeScreen extends PureComponent {
       style={[{'width': listItemWidth, paddingHorizontal: 0, paddingTop: 30}]}
     >
       <Text style={[styles.p]}>
-        Congratulations!
-        {'\n\n'}
-        You've reached the end of all the flashcards in this section.
-        {'\n\n'}
+        Congratulations! {'\n\n'}
+        You've reached the end of all the flashcards in this section. {'\n\n'}
         Continue your practice by shuffling these kanji cards.
       </Text>
       <Button 
@@ -47,15 +43,9 @@ class PracticeScreen extends PureComponent {
     >
       <Flipper 
         id={item.id}
-      >
-        <H1 
-          title={item.question} 
-          style={[styles.flipperFront]}
-        />
-        <Text style={[styles.flipperBack]}>
-          { item.answer }
-        </Text>
-      </Flipper>
+        question={item.question}
+        answer={item.answer}
+      />
     </Col>
   );
   constructor(props) {
@@ -68,7 +58,7 @@ class PracticeScreen extends PureComponent {
   componentDidMount() {
     const { params } = this.props.navigation.state;
 
-    this.loadData.bind(this, params.courseGrade, maxQuestions=-1, withChoices=false)();
+    this.loadData.bind(this, params.courseGrade, maxQuestions=0, withChoices=false)();
   }
   loadData(forGrade, maxQuestions, withChoices) {
     let { isLoaded, data } = this.state;
