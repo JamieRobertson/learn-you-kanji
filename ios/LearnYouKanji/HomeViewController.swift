@@ -11,10 +11,10 @@ import CoreData
 import SnapKit
 
 
-enum DBError: Error {
-    case errorFetchingData
-    case noDataFound
-}
+//enum DBError: Error {
+//    case errorFetchingData
+//    case noDataFound
+//}
 
 class HomeViewController: UIViewController {
     var allCourses:[Course]

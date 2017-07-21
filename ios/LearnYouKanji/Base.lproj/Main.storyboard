@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nf7-1C-e1R">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jvN-bo-3Xh">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -190,7 +190,7 @@
         <!--View Controller-->
         <scene sceneID="q4Y-kk-8bO">
             <objects>
-                <viewController storyboardIdentifier="sbPopUpID" id="jvN-bo-3Xh" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="sbPopUpID" id="jvN-bo-3Xh" customClass="ViewController" customModule="LearnYouKanji" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0X6-zH-bEG"/>
                         <viewControllerLayoutGuide type="bottom" id="nD2-BS-ny9"/>
@@ -198,33 +198,7 @@
                     <view key="view" contentMode="scaleToFill" id="GBy-5U-YZA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H9r-Mj-eUz">
-                                <rect key="frame" x="58" y="181" width="204" height="72"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Correct! Well done " textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cI0-WE-yEQ">
-                                        <rect key="frame" x="39" y="26" width="127" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="72" id="lMH-YE-sWo"/>
-                                </constraints>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="H9r-Mj-eUz" firstAttribute="top" secondItem="0X6-zH-bEG" secondAttribute="bottom" constant="161" id="OMO-rn-F1V"/>
-                            <constraint firstItem="H9r-Mj-eUz" firstAttribute="leading" secondItem="GBy-5U-YZA" secondAttribute="leadingMargin" constant="42" id="hBJ-e7-Gjk"/>
-                            <constraint firstItem="H9r-Mj-eUz" firstAttribute="centerY" secondItem="GBy-5U-YZA" secondAttribute="centerY" constant="-23" id="s8J-vN-YBp"/>
-                            <constraint firstItem="H9r-Mj-eUz" firstAttribute="centerX" secondItem="GBy-5U-YZA" secondAttribute="centerX" id="xzV-cX-IVf"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="H9r-Mj-eUz" secondAttribute="trailing" constant="42" id="yby-ur-8Q1"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lkI-wK-9OK" userLabel="First Responder" sceneMemberID="firstResponder"/>
