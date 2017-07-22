@@ -45,6 +45,9 @@ react-navigation:
 Add `RCTLinkingIOS` to podfile ?  
 update node (6 -> 8) ?  
 
+`Unable to execute JS call: __fbBatchedBridge is undefined`  
+Seems to occur only in dev mode  
+
 clean npm:  
 `rm -rf node_modules && npm install`
 `watchman watch-del-all`
