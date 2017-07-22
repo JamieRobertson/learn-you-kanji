@@ -1,5 +1,5 @@
 import React from 'react';
-import { Animated, Easing, StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native';
+import { LayoutAnimation, Easing, StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native';
 import { H1 } from '../components';
 import { styles, colors } from '../styles';
 
@@ -7,64 +7,68 @@ import { styles, colors } from '../styles';
 class Flipper extends React.PureComponent {
   constructor(props) {
     super(props);
-    this.flipValue = new Animated.Value(0);
+    LayoutAnimation.configureNext(animations.layout.easeInEaseOut);
     this.state = {
-      showFront: true//,
-      // flipValue: new Animated.Value(0)
+      isFlipped: false
     };
-    // Animated.timing(this.flipValue, {
-    //     toValue: 1,
-    //     duration: 3000
-    // });
   }
-  componentDidMount() {
-    this.flipValue.timing(this.flipValue, {
-        toValue: 1,
-        duration: 3000
-    });
+  onPress() {
+    
+    this.setState({isFlipped: !this.state.isFlipped});
   }
   render() {
     let k = this.props.k || false;
     let { question, answer } = this.props;
-    let { showFront, flipValue } = this.state;
-
-    const flipInterpolation = flipValue.interpolate({
-      inputRange: [0, 1],
-      outputRange: ['0deg', '-180deg']
-    });
-    const flipInterpolationReverse = flipValue.interpolate({
-      inputRange: [0, 1],
-      outputRange: ['-180deg', '0deg']
-    });
-    let isFlipped =  {
-      front: this.state.showFront ?  { transform: [{rotateY: flipInterpolation}] } : { transform: [{rotateY: flipInterpolation}] },
-      back: this.state.showFront ? { transform: [{rotateY: flipInterpolationReverse}] } : { transform: flipInterpolationReverse }
-    };
+    let { isFlipped } = this.state;
 
     return (
-      <View 
-        style={[flipperContainer]}
-      >
-        <TouchableWithoutFeedback     
-          onPress={ () => this.setState({showFront: !this.state.showFront}) }
-        >
-          
-            <View style={[flipper]}>
-              <Animated.View style={[flipperInner, isFlipped.front]}>
-                <H1 title={ question } />
-              </Animated.View>
-              <Animated.View style={[flipperInner, isFlipped.back]}>
-                <Text style={[{textAlign: 'center', fontWeight: '500', marginBottom: 15}]}>
-                  { answer }
-                </Text>
-              </Animated.View>
+      <TouchableWithoutFeedback onPress={ this.onPress.bind(this) }>
+        <View style={[flipperContainer]}>
+
+          <View style={[flipper]}>
+            <View style={[flipperInner, isFlipped ? {transform: [{rotateY: '-180deg'}]} : {transform: [{rotateY: '0deg'}]} ]}>
+              <H1 title={ question } />
             </View>
-          
-        </TouchableWithoutFeedback>
-      </View>
+            <View style={[flipperInner, isFlipped ? {transform: [{rotateY: '0deg'}]} : {transform: [{rotateY: '-180deg'}]} ]}>
+              <Text style={[{textAlign: 'center', fontWeight: '500', marginBottom: 15}]}>
+                { answer }
+              </Text>
+            </View>
+          </View>
+        
+        </View>
+      </TouchableWithoutFeedback>
     );
   }
 }
+
+const animations = {
+  layout: {
+    spring: {
+      duration: 750,
+      create: {
+        duration: 300,
+        type: LayoutAnimation.Types.easeInEaseOut,
+        property: LayoutAnimation.Properties.opacity,
+      },
+      update: {
+        type: LayoutAnimation.Types.spring,
+        springDamping: 400,
+      },
+    },
+    easeInEaseOut: {
+      duration: 300,
+      create: {
+        type: LayoutAnimation.Types.easeInEaseOut,
+        property: LayoutAnimation.Properties.scaleXY,
+      },
+      update: {
+        delay: 100,
+        type: LayoutAnimation.Types.easeInEaseOut,
+      },
+    },
+  },
+};
 
 const flipperContainer = {
   position: 'relative',
@@ -92,6 +96,12 @@ const flipperInner = {
   alignItems: 'center',
   width: '100%',
   height: '100%'
+  // 0: {
+  //   transform: [{rotateY: '0deg'}]
+  // },
+  // 1: {
+  //   transform: [{rotateY: '-180deg'}]
+  // }
 };
 
 export default Flipper;
