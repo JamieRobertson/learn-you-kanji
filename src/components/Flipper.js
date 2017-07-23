@@ -1,5 +1,5 @@
 import React from 'react';
-import { LayoutAnimation, Easing, StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native';
+import { Animated, Image, StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native';
 import { H1 } from '../components';
 import { styles, colors } from '../styles';
 
@@ -7,87 +7,75 @@ import { styles, colors } from '../styles';
 class Flipper extends React.PureComponent {
   constructor(props) {
     super(props);
-    LayoutAnimation.configureNext(animations.layout.easeInEaseOut);
+
     this.state = {
-      isFlipped: false
+      isFlipped: false,
+      flipFrontValue: new Animated.Value(0),
+      flipBackValue: new Animated.Value(1)
     };
   }
   onPress() {
+    let { isFlipped, flipFrontValue, flipBackValue } = this.state;
     
-    this.setState({isFlipped: !this.state.isFlipped});
+    Animated.parallel([
+      Animated.timing(flipFrontValue, {
+        toValue: isFlipped ? 0 : 1,
+        duration: 300
+      }),
+      Animated.timing(flipBackValue, {
+        toValue: isFlipped ? 1 : 0,
+        duration: 300
+      })
+    ]).start(() =>
+      this.setState({isFlipped: !this.state.isFlipped})
+    );
   }
   render() {
     let k = this.props.k || false;
     let { question, answer } = this.props;
-    let { isFlipped } = this.state;
+    let { isFlipped, flipFrontValue, flipBackValue } = this.state;
+
+    let interpolateValue = (value) => {
+      return (
+        value.interpolate({
+          inputRange: [0, 1],
+          outputRange: ['0deg', '-180deg']
+        })
+      );
+    };
 
     return (
       <TouchableWithoutFeedback onPress={ this.onPress.bind(this) }>
-        <View style={[flipperContainer]}>
-
-          <View style={[flipper]}>
-            <View style={[flipperInner, isFlipped ? {transform: [{rotateY: '-180deg'}]} : {transform: [{rotateY: '0deg'}]} ]}>
-              <H1 title={ question } />
+        <View style={[flipper]}>
+          <Animated.View style={[flipperInner, {transform: [{rotateY: interpolateValue(flipFrontValue)}] } ]}>
+            <H1 title={ question } />
+            <View style={flipperIconWrapper}>
+              <Image 
+                source={require('../static/img/question-icon.png')}
+                style={flipperIcon}
+              />
             </View>
-            <View style={[flipperInner, isFlipped ? {transform: [{rotateY: '0deg'}]} : {transform: [{rotateY: '-180deg'}]} ]}>
-              <Text style={[{textAlign: 'center', fontWeight: '500', marginBottom: 15}]}>
-                { answer }
-              </Text>
-            </View>
-          </View>
-        
+          </Animated.View>
+          <Animated.View style={[flipperInner, {transform: [{rotateY: interpolateValue(flipBackValue)}] } ]}>
+            <Text style={[{textAlign: 'center', fontWeight: '500', marginBottom: 15}]}>
+              { answer }
+            </Text>
+          </Animated.View>
         </View>
       </TouchableWithoutFeedback>
     );
   }
 }
 
-const animations = {
-  layout: {
-    spring: {
-      duration: 750,
-      create: {
-        duration: 300,
-        type: LayoutAnimation.Types.easeInEaseOut,
-        property: LayoutAnimation.Properties.opacity,
-      },
-      update: {
-        type: LayoutAnimation.Types.spring,
-        springDamping: 400,
-      },
-    },
-    easeInEaseOut: {
-      duration: 300,
-      create: {
-        type: LayoutAnimation.Types.easeInEaseOut,
-        property: LayoutAnimation.Properties.scaleXY,
-      },
-      update: {
-        delay: 100,
-        type: LayoutAnimation.Types.easeInEaseOut,
-      },
-    },
-  },
-};
-
-const flipperContainer = {
-  position: 'relative',
-  marginBottom: 30,
-  backgroundColor: colors.white,
-  borderWidth: 1,
-  borderStyle: 'solid',
-  borderColor: colors.greyLight,
-  borderRadius: 2,
-  padding: 15,
-  width: '80%',
-  height: '40%'
-};
 const flipper = {
   position: 'relative',
-  height: '100%'
+  width: '80%',
+  height: '40%',
+  marginBottom: 30
 };
 const flipperInner = {
   backfaceVisibility: 'hidden',
+  backgroundColor: colors.white,
   // perspective: 400, // ?
   position: 'absolute',
   top: 0,
@@ -95,13 +83,26 @@ const flipperInner = {
   justifyContent: 'center',
   alignItems: 'center',
   width: '100%',
-  height: '100%'
-  // 0: {
-  //   transform: [{rotateY: '0deg'}]
-  // },
-  // 1: {
-  //   transform: [{rotateY: '-180deg'}]
-  // }
+  height: '100%',
+  padding: 15,
+  borderWidth: 1,
+  borderStyle: 'solid',
+  borderColor: colors.greyLight,
+  borderRadius: 2
+};
+const flipperIconWrapper = {
+  position: 'absolute',
+  bottom: 6,
+  right: 6,
+  width: 21,
+  height: 21,
+  padding: 4,
+  borderRadius: (21 / 2),
+  backgroundColor: colors.greyLight
+};
+const flipperIcon = {
+  width: 13,
+  height: 13
 };
 
 export default Flipper;
