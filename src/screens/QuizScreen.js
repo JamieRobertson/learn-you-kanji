@@ -5,7 +5,6 @@ import {
   ActivityIndicator, Modal, NativeModules, 
   ScrollView, Text, TouchableOpacity, View 
 } from 'react-native';
-
 import { 
   Btn, Choice, Col, H1, Row, QuizHeader, QuizModal 
 } from '../components';
@@ -189,7 +188,7 @@ class QuizScreen extends Component {
   render() {
     let { navigation } = this.props;
     let { 
-      isLoaded, chosenAnswer, 
+      isLoaded, chosenAnswer, totalScore, 
       hasSubmittedAnswer, currentQuestion 
     } = this.state;
 
@@ -224,7 +223,11 @@ class QuizScreen extends Component {
             title={ hasSubmittedAnswer === false ? 'Check answer' : 'Next question' } 
             buttonStyle={ submitButtonStyle }
             disabled={ chosenAnswer === null ? true : false}
-            onPress={ this.onSubmitAnswer.bind(this) }
+            onPress={ 
+              currentQuestion === maxQuestions ? 
+                navigation.navigate('QuizScore', { totalScore: totalScore, courseGrade: navigation.state.params.courseGrade }) : 
+                this.onSubmitAnswer.bind(this) 
+            }
           />
         </Row>
         { this.renderModal.bind(this)() }
