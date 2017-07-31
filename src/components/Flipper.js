@@ -71,7 +71,7 @@ const flipper = {
   position: 'relative',
   width: '80%',
   height: '40%',
-  marginBottom: 30
+  marginBottom: 60
 };
 const flipperInner = {
   backfaceVisibility: 'hidden',

@@ -10,10 +10,11 @@ import { styles } from '../styles';
 // Load all questions and answers (shuffled) for course.
 // Swipe back and forth to next/previous question.
 
+// Math.round / floor should be used to make sure 
+// listItemWidth is a whole number. 
+// This is important for snapToInterval param
 const {width, height} = Dimensions.get('window');
-// const widthPadding = 30;
-// const gridWidth = width - widthPadding;
-const listItemWidth = (width * 0.74);
+const listItemWidth = Math.floor((width * 0.74));  // 0.76 works
 const listItemSpacing = ((width - listItemWidth) / 2)
 
 class PracticeScreen extends PureComponent {
@@ -39,7 +40,7 @@ class PracticeScreen extends PureComponent {
   );
   renderItem = ({item, index}) => (
     <Col flex={1} alignItems={'center'} justifyContent={'center'} 
-      style={[{'width': listItemWidth, paddingHorizontal: 0, backgroundColor: index % 2 === 0 ? 'teal':'tomato'}]}
+      style={[{'width': listItemWidth, paddingHorizontal: 0}]}
     >
       <Flipper 
         id={item.id}
@@ -74,7 +75,6 @@ class PracticeScreen extends PureComponent {
   }
   render() {
     let { isLoaded, data } = this.state;
-    // const { navigate } = this.props.navigation;
 
     if (!isLoaded) {
       return (
@@ -90,29 +90,18 @@ class PracticeScreen extends PureComponent {
         keyExtractor={(item, index) => item.id}
         renderItem={this.renderItem}
         horizontal={true}
-        pagingEnabled={true}
+        pagingEnabled={false}  // or snapToInterval wont work
         initialNumToRender={3}
         contentContainerStyle={
           [{flexDirection: 'row', alignItems: 'center', paddingHorizontal: listItemSpacing}]
         }
         // snapToAlignment={'start'}
         // centerContent={true} // not applicable
-        // contentOffset={{x: -listItemSpacing}}
-        // contentInset={{left: 100}}
-        snapToInterval={width * 0.5}
-        ListFooterComponent={this.renderFooter.bind(this, this.props.navigation)}
+        // scrollEventThrottle={100}
+        snapToInterval={listItemWidth}
+        ListFooterComponent={this.renderFooter.bind(this, this.props.navigation)}  // end of list message - 'shuffle and start again'
       />
     );
-    // content Conainer style 
-    //  justifyContent: 'space-around',
-
-    // For list offset 
-    // , paddingHorizontal: listItemSpacing
-
-    // , marginLeft: listItemSpacing
-    // ListHeaderComponent  // spacing
-    // ListFooterComponent  // end of list message - 'shuffle and start again'
-
   }
 }
 
