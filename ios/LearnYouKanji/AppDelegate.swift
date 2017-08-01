@@ -6,9 +6,9 @@
 //  Copyright © 2017 Jamie Robertson. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import CoreData
-import SwiftyJSON
 import React
 
 @UIApplicationMain
@@ -20,34 +20,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func preloadData(){
         print("running preload")
         do {
-            if let file = Bundle.main.url(forResource: "questionData", withExtension: "json") {
-                
-                // Use SwiftyJSON to serialize json data
-                let data = try Data(contentsOf: file)
-                let json = JSON(data: data)
+            if let filePath = Bundle.main.path(forResource: "questionData", ofType: "plist") {
+
+                let items = NSArray(contentsOfFile: filePath) as! [[String:AnyObject]]
+
                 var questionId:Int16 = 0  // index added to each question
-                
-                for (_, courseObject):(String, JSON) in json {
+
+                for courseObject in items {
                     let course:Course = NSEntityDescription.insertNewObject(
                         forEntityName: "Course", into: DatabaseController.getContext()
                     ) as! Course
-                    course.name = courseObject["name"].stringValue
-                    course.grade = courseObject["grade"].number as! Int16
-                    
-                    let questionsArray = courseObject["questions"].arrayValue
-                    for questionObject:JSON in questionsArray {
+
+                    course.grade = courseObject["grade"] as! Int16
+                    course.name = courseObject["name"] as? String
+
+                    let questionsArray = courseObject["questions"] as! [[String:String]]
+
+                    for questionObject in questionsArray {
                         let question:Question = NSEntityDescription.insertNewObject(
                             forEntityName: "Question", into: DatabaseController.getContext()
                         ) as! Question
                         question.id = questionId; questionId += 1
                         question.strength = 0
-                        question.question = questionObject["question"].stringValue
-                        question.answer = questionObject["answer"].stringValue
+                        question.question = questionObject["question"]
+                        question.answer = questionObject["answer"]
                         course.addToQuestions(question)
                     }
                 }
                 DatabaseController.saveContext()
-
             } else {
                 print("no file found")
             }
