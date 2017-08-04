@@ -9,10 +9,19 @@ import { styles, colors } from '../styles';
  * Fetch all course data from CoreData.
  * Render course items with titles and button links.
  */
-// const data = [
-//     { 'grade': 1, 'name': 'foo 1' },
-// ...
-// ]
+const homeIcons = [
+  require('../static/img/course-icon-01.png'),
+  require('../static/img/course-icon-02.png'),
+  require('../static/img/course-icon-03.png'),
+  require('../static/img/course-icon-04.png'),
+  require('../static/img/course-icon-05.png'),
+  require('../static/img/course-icon-06.png'),
+  require('../static/img/course-icon-07.png'),
+  require('../static/img/course-icon-08.png'),
+  require('../static/img/course-icon-09.png'),
+  require('../static/img/course-icon-10.png'),
+  require('../static/img/course-icon-11.png')
+]
 
 class HomeScreen extends Component {
   static navigationOptions = {
@@ -51,10 +60,7 @@ class HomeScreen extends Component {
         <View key={i} style={[ styles.contentCard, styles.dropShadow ]}>
           <Row>
             <Col flex={1}>
-              <Image 
-                source={require('../static/img/close-icon.png')}
-                style={styles.icon}
-              />
+              <Image source={homeIcons[i]} style={styles.icon} />
             </Col>
             <Col flex={11}>
               <Text style={ [styles.h3] }>
