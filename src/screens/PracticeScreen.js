@@ -1,27 +1,31 @@
 import React, { PureComponent } from 'react';
+import Dimensions from 'Dimensions';
 import PropTypes from 'prop-types';
+import { HeaderBackButton } from 'react-navigation';
 
 import { ActivityIndicator, Button, FlatList, NativeModules, Text, View } from 'react-native';
 import { Col, Flipper, Row } from '../components';
-import Dimensions from 'Dimensions';
 import { styles } from '../styles';
 
-// Simple practice screen.
-// Load all questions and answers (shuffled) for course.
-// Swipe back and forth to next/previous question.
-
-// Math.round / floor should be used to make sure 
-// listItemWidth is a whole number. 
-// This is important for snapToInterval param
+/** 
+ * Simple practice screen.
+ * Load all questions and answers (shuffled) for course.
+ * 
+ * Math.round / floor should be used to make sure listItemWidth 
+ * is a whole number. This is important for snapToInterval param.
+ */
 const {width, height} = Dimensions.get('window');
-const listItemWidth = Math.floor((width * 0.74));  // 0.76 works
+const listItemWidth = Math.floor((width * 0.74));
 const listItemSpacing = ((width - listItemWidth) / 2)
 
+
 class PracticeScreen extends PureComponent {
-  static navigationOptions = {
-    title: 'Kanji practice',
-    headerBackTitle: 'Home',
-    gesturesEnabled: false
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: 'Kanji practice',
+      gesturesEnabled: false,
+      headerLeft: <HeaderBackButton onPress={ () => navigation.navigate('Home') } />
+    }
   };
   renderFooter = (navigation) => (
     <Col flex={1} alignItems={'center'} justifyContent={'flex-start'} 
@@ -35,6 +39,13 @@ class PracticeScreen extends PureComponent {
       <Button 
         title='Shuffle cards' 
         onPress={ () => navigation.navigate('Practice', { courseGrade: navigation.state.params.courseGrade }) }
+      />
+      <Text style={[styles.p]}>
+        Ready to test yourself on these kanji?
+      </Text>
+      <Button 
+        title='Take Test' 
+        onPress={ () => navigation.navigate('Quiz', { courseGrade: navigation.state.params.courseGrade }) }
       />
     </Col>
   );
@@ -91,12 +102,12 @@ class PracticeScreen extends PureComponent {
         renderItem={this.renderItem}
         horizontal={true}
         pagingEnabled={false}  // or snapToInterval wont work
+        showsHorizontalScrollIndicator={false}
         initialNumToRender={3}
         contentContainerStyle={
           [{flexDirection: 'row', alignItems: 'center', paddingHorizontal: listItemSpacing}]
         }
         // snapToAlignment={'start'}
-        // centerContent={true} // not applicable
         // scrollEventThrottle={100}
         snapToInterval={listItemWidth}
         ListFooterComponent={this.renderFooter.bind(this, this.props.navigation)}  // end of list message - 'shuffle and start again'
