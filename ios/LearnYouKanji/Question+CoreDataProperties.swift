@@ -19,14 +19,14 @@ extension Question {
     @NSManaged public var answer: String?
     @NSManaged public var id: Int16
     @NSManaged public var question: String?
-    @NSManaged public var strength: Int16
+    @NSManaged public var strength: Float
     @NSManaged public var course: Course?
 
 }
 
 // My custom methods
 extension Question {
-    public func increaseStrength() { self.strength += 1 }
-    public func decreaseStrength() { self.strength -= 1 }
+    public func increaseStrength() { self.strength += 0.1 }
+    public func decreaseStrength() { self.strength -= 0.1 }
 
 }

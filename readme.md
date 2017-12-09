@@ -14,6 +14,10 @@ Secondary school characters are split into 5 sections.
 ### About the source code
 Project uses [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON). Install it with [Carthage](https://github.com/Carthage/Carthage).  
 
+### Todo
+Add about page with 'what is joyo kanji' + useful info  
+Add section on radicals  
+
 ### Notes
 Inspect core data:  
 ```bash
@@ -28,8 +32,17 @@ $ find . -name "*.sqlite"
 # Use sqlite command line manager 
 $ sqlite3 LearnYouKanji.sqlite
 
+# Useful commands 
+> .dbinfo main 
+> .tables
+> .schema <TABLENAME>
+
+# These tables exist:  
+# ZCOURSE  ZQUESTION  Z_METADATA  Z_MODELCACHE  Z_PRIMARYKEY  
+
 # output table to inspect
 $ sqlite3 LearnYouKanji.sqlite "SELECT * FROM ZQUESTION ;" > output.txt
+$ sqlite3 LearnYouKanji.sqlite "SELECT ZCOURSE, ZID, ZQUESTION, ZANSWER, ZSTRENGTH FROM ZQUESTION ORDER BY ZID ASC;" > output.txt
 ```
 
 ### Important  
@@ -53,12 +66,4 @@ clean npm:
 `watchman watch-del-all`
 `node_modules/react-native/packager/packager.sh --reset-cache`
 
-
-<img src="https://github.com/JamieRobertson/learn-you-kanji/blob/master/screenshots/github/lyk-screenshot-1.png" width="320" height="480" />
-&nbsp;
-<img src="https://github.com/JamieRobertson/learn-you-kanji/blob/master/screenshots/github/lyk-screenshot-2.png" width="320" height="480" />
-<br style="clear: both;">
-
-<img src="https://github.com/JamieRobertson/learn-you-kanji/blob/master/screenshots/github/lyk-screenshot-3.png" width="320" height="480" />
-&nbsp;
-<img src="https://github.com/JamieRobertson/learn-you-kanji/blob/master/screenshots/github/lyk-screenshot-4.png" width="320" height="480" />
+<span><img src="https://github.com/JamieRobertson/learn-you-kanji/blob/master/screenshots/github/lyk-screenshot-1.png" width="320" height="480" />&nbsp;<img src="https://github.com/JamieRobertson/learn-you-kanji/blob/master/screenshots/github/lyk-screenshot-2.png" width="320" height="480" /><br style="clear: both;"><img src="https://github.com/JamieRobertson/learn-you-kanji/blob/master/screenshots/github/lyk-screenshot-3.png" width="320" height="480" />&nbsp;<img src="https://github.com/JamieRobertson/learn-you-kanji/blob/master/screenshots/github/lyk-screenshot-4.png" width="320" height="480" /></span>

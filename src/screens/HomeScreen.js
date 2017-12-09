@@ -44,8 +44,7 @@ class HomeScreen extends Component {
 
     let QuestionManager = NativeModules.QuestionManager;
     QuestionManager.getCourses((err, res) => {
-      console.log(err);
-      console.log(res);
+      // console.log(err); // console.log(res);
       this.setState({data: res}, () => {
         this.setState({isLoaded: true})  
       });

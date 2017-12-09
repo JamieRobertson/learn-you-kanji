@@ -6,11 +6,8 @@ import PropTypes from 'prop-types';
 class Grid extends Component {
   render() {
     const gridStyle = this.props.gridType === 'col' ? gridStyles.col : gridStyles.row;
-    // const flex = { flex: this.props.flex } || {};
     const k = this.props.k || false;
     const flex = this.props.flex ? { flex: this.props.flex } : '';
-    console.log(k);
-    console.log(flex);
 
     let style = [
       gridStyle,
@@ -53,16 +50,11 @@ class Row extends Component {
 const gridStyles = StyleSheet.create({
   col: {
     flexDirection: 'column',
-    // minWidth: '100%',
     paddingHorizontal: 15
   },
   row: {
     flexDirection: 'row',
-    minWidth: '100%',
-    // flex: 1,
-    // paddingHorizontal: 15,
-    // marginLeft: -15,
-    // marginRight: -15
+    minWidth: '100%'
   }
 });
 

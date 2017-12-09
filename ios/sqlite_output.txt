@@ -1,0 +1,2138 @@
+ZCOURSE (Z_PK) | ZID | ZQUESTION | ZANSWER | ZSTRENGTH
+
+11|0|一|one|0
+11|1|右|right (direction)|0
+11|2|雨|rain|0
+11|3|円|round, yen|0
+11|4|王|king|0
+11|5|音|sound|0
+11|6|下|below|0
+11|7|火|fire|0
+11|8|花|flower|0
+11|9|貝|shellfish|0
+11|10|学|study|0
+11|11|気|feeling|0
+11|12|九|nine|0
+11|13|休|rest|0
+11|14|玉|ball|0
+11|15|金|gold|0
+11|16|空|sky|0
+11|17|月|month, moon|0
+11|18|犬|dog|0
+11|19|見|see|0
+11|20|五|five|0
+11|21|口|mouth|0
+11|22|校|school|0
+11|23|左|left (direction)|0
+11|24|三|three|0
+11|25|山|mountain|0
+11|26|子|child|0
+11|27|四|four|0
+11|28|糸|thread|0
+11|29|字|letter|0
+11|30|耳|ear|0
+11|31|七|seven|0
+11|32|車|car|0
+11|33|手|hand|0
+11|34|十|ten|0
+11|35|出|exit|0
+11|36|女|woman|0
+11|37|小|small|0
+11|38|上|up|0
+11|39|森|forest|0
+11|40|人|person|0
+11|41|水|water|0
+11|42|正|correct|0
+11|43|生|life|0
+11|44|青|blue|0
+11|45|夕|evening|0
+11|46|石|stone|0
+11|47|赤|red|0
+11|48|千|thousand|0
+11|49|川|river|0
+11|50|先|previous|0
+11|51|早|early|0
+11|52|草|grass|0
+11|53|足|foot|0
+11|54|村|village|0
+11|55|大|large|0
+11|56|男|male|0
+11|57|竹|bamboo|0
+11|58|中|middle|0
+11|59|虫|insect|0
+11|60|町|town|0
+11|61|天|heaven|0
+11|62|田|rice paddy|0
+11|63|土|soil|0
+11|64|二|two|0
+11|65|日|day|0
+11|66|入|enter|0
+11|67|年|year|0
+11|68|白|white|0
+11|69|八|eight|0
+11|70|百|hundred|0
+11|71|文|writing|0
+11|72|木|tree|0
+11|73|本|book|0
+11|74|名|name|0
+11|75|目|eye|0
+11|76|立|stand up|0
+11|77|力|power|0
+11|78|林|woods|0
+11|79|六|six|0
+6|80|引|pull|0
+6|81|羽|feather|0
+6|82|雲|cloud|0
+6|83|園|garden|0
+6|84|遠|far|0
+6|85|何|what|0
+6|86|科|section|0
+6|87|夏|summer|0
+6|88|家|house|0
+6|89|歌|song|0
+6|90|画|tableau|0
+6|91|回|times|0
+6|92|会|association|0
+6|93|海|sea|0
+6|94|絵|picture|0
+6|95|外|outside|0
+6|96|角|angle|0
+6|97|楽|pleasure|0
+6|98|活|active|0
+6|99|間|interval|0
+6|100|丸|circle|0
+6|101|岩|boulder|0
+6|102|顔|face|0
+6|103|汽|steam|0
+6|104|記|write down|0
+6|105|帰|return|0
+6|106|弓|bow (archery, violin)|0
+6|107|牛|cow|0
+6|108|魚|fish|0
+6|109|京|capital|0
+6|110|強|strong|0
+6|111|教|teach|0
+6|112|近|near|0
+6|113|兄|older brother|0
+6|114|形|shape|0
+6|115|計|measure|0
+6|116|元|origin|0
+6|117|言|say|0
+6|118|原|field|0
+6|119|戸|door|0
+6|120|古|old|0
+6|121|午|noon|0
+6|122|後|behind|0
+6|123|語|language|0
+6|124|工|craft|0
+6|125|公|public|0
+6|126|広|wide|0
+6|127|交|mix|0
+6|128|光|ray|0
+6|129|考|think|0
+6|130|行|go|0
+6|131|高|tall, expensive|0
+6|132|黄|yellow|0
+6|133|合|fit|0
+6|134|谷|valley|0
+6|135|国|country|0
+6|136|黒|black|0
+6|137|今|now|0
+6|138|才|genius|0
+6|139|細|thin|0
+6|140|作|make|0
+6|141|算|calculate|0
+6|142|止|stop|0
+6|143|市|market|0
+6|144|矢|arrow|0
+6|145|姉|older sister|0
+6|146|思|think|0
+6|147|紙|paper|0
+6|148|寺|Buddhist temple|0
+6|149|自|oneself|0
+6|150|時|time|0
+6|151|室|room|0
+6|152|社|company|0
+6|153|弱|weak|0
+6|154|首|neck|0
+6|155|秋|autumn|0
+6|156|週|week|0
+6|157|春|springtime|0
+6|158|書|write|0
+6|159|少|few|0
+6|160|場|place|0
+6|161|色|color|0
+6|162|食|eat, meal|0
+6|163|心|heart|0
+6|164|新|new|0
+6|165|親|parent|0
+6|166|図|diagram|0
+6|167|数|number|0
+6|168|西|west|0
+6|169|声|voice|0
+6|170|星|star|0
+6|171|晴|clear up|0
+6|172|切|cut|0
+6|173|雪|snow|0
+6|174|船|boat|0
+6|175|線|line|0
+6|176|前|in front|0
+6|177|組|association|0
+6|178|走|run|0
+6|179|多|many|0
+6|180|太|thick|0
+6|181|体|body|0
+6|182|台|pedestal|0
+6|183|地|ground|0
+6|184|池|pond|0
+6|185|知|know|0
+6|186|茶|tea|0
+6|187|昼|daytime|0
+6|188|長|long|0
+6|189|鳥|bird|0
+6|190|朝|morning|0
+6|191|直|straight|0
+6|192|通|pass through|0
+6|193|弟|younger brother|0
+6|194|店|shop|0
+6|195|点|point|0
+6|196|電|electricity|0
+6|197|刀|sword|0
+6|198|冬|winter|0
+6|199|当|hit|0
+6|200|東|east|0
+6|201|答|answer|0
+6|202|頭|head|0
+6|203|同|same|0
+6|204|道|road|0
+6|205|読|read|0
+6|206|内|inside|0
+6|207|南|south|0
+6|208|肉|meat|0
+6|209|馬|horse|0
+6|210|売|sell|0
+6|211|買|buy|0
+6|212|麦|wheat|0
+6|213|半|half|0
+6|214|番|one's turn|0
+6|215|父|father|0
+6|216|風|wind|0
+6|217|分|part, minute of time|0
+6|218|聞|hear|0
+6|219|米|rice|0
+6|220|歩|walk|0
+6|221|母|mother|0
+6|222|方|direction|0
+6|223|北|north|0
+6|224|毎|every|0
+6|225|妹|younger sister|0
+6|226|万|ten thousand|0
+6|227|明|bright|0
+6|228|鳴|chirp|0
+6|229|毛|hair|0
+6|230|門|gates|0
+6|231|夜|night|0
+6|232|野|field|0
+6|233|友|friend|0
+6|234|用|use|0
+6|235|曜|day of the week|0
+6|236|来|come|0
+6|237|里|village|0
+6|238|理|reason|0
+6|239|話|talk|0
+9|240|悪|bad|0
+9|241|安|cheap|0
+9|242|暗|dark|0
+9|243|医|medicine|0
+9|244|委|committee|0
+9|245|意|idea|0
+9|246|育|nurture|0
+9|247|員|member|0
+9|248|院|institution|0
+9|249|飲|drink|0
+9|250|運|carry|0
+9|251|泳|swim|0
+9|252|駅|station|0
+9|253|央|center|0
+9|254|横|side|0
+9|255|屋|roof|0
+9|256|温|warm|0
+9|257|化|change|0
+9|258|荷|luggage|0
+9|259|界|world|0
+9|260|開|open|0
+9|261|階|floor of a building|0
+9|262|寒|cold|0
+9|263|感|feeling|0
+9|264|漢|China|0
+9|265|館|public building|0
+9|266|岸|beach|0
+9|267|起|wake up|0
+9|268|期|period of time|0
+9|269|客|guest|0
+9|270|究|research|0
+9|271|急|hurry|0
+9|272|級|rank|0
+9|273|宮|Shinto shrine|0
+9|274|球|sphere|0
+9|275|去|leave|0
+9|276|橋|bridge|0
+9|277|業|business|0
+9|278|曲|musical composition|0
+9|279|局|office|0
+9|280|銀|silver|0
+9|281|区|ward|0
+9|282|苦|suffer|0
+9|283|具|tool|0
+9|284|君|you|0
+9|285|係|person in charge|0
+9|286|軽|light|0
+9|287|血|blood|0
+9|288|決|decide|0
+9|289|研|sharpen|0
+9|290|県|prefecture|0
+9|291|庫|warehouse|0
+9|292|湖|lake|0
+9|293|向|over there|0
+9|294|幸|happiness|0
+9|295|港|harbor|0
+9|296|号|number|0
+9|297|根|root|0
+9|298|祭|festival|0
+9|299|皿|dish|0
+9|300|仕|do|0
+9|301|死|death|0
+9|302|使|use|0
+9|303|始|begin|0
+9|304|指|finger|0
+9|305|歯|tooth|0
+9|306|詩|poem|0
+9|307|次|next|0
+9|308|事|abstract thing|0
+9|309|持|hold|0
+9|310|式|style|0
+9|311|実|truth|0
+9|312|写|copy|0
+9|313|者|someone|0
+9|314|主|master|0
+9|315|守|protect|0
+9|316|取|take|0
+9|317|酒|alcoholic drink|0
+9|318|受|accept|0
+9|319|州|state|0
+9|320|拾|pick up|0
+9|321|終|end|0
+9|322|習|learn|0
+9|323|集|collect|0
+9|324|住|dwelling|0
+9|325|重|heavy|0
+9|326|宿|inn|0
+9|327|所|place|0
+9|328|暑|hot|0
+9|329|助|help|0
+9|330|昭|shining|0
+9|331|消|extinguish|0
+9|332|商|sell|0
+9|333|章|chapter|0
+9|334|勝|win|0
+9|335|乗|ride|0
+9|336|植|plant|0
+9|337|申|say|0
+9|338|身|body|0
+9|339|神|god|0
+9|340|真|TRUE|0
+9|341|深|deep|0
+9|342|進|advance|0
+9|343|世|world|0
+9|344|整|put in order|0
+9|345|昔|long ago|0
+9|346|全|whole|0
+9|347|相|mutual|0
+9|348|送|send|0
+9|349|想|concept|0
+9|350|息|breath|0
+9|351|速|fast|0
+9|352|族|tribe|0
+9|353|他|other|0
+9|354|打|hit|0
+9|355|対|opposite|0
+9|356|待|wait|0
+9|357|代|substitute|0
+9|358|第|ordinal number prefix|0
+9|359|題|topic|0
+9|360|炭|charcoal|0
+9|361|短|short|0
+9|362|談|discuss|0
+9|363|着|wear|0
+9|364|注|pour|0
+9|365|柱|pillar|0
+9|366|丁|ward|0
+9|367|帳|account book|0
+9|368|調|investigate|0
+9|369|追|follow|0
+9|370|定|decide|0
+9|371|庭|garden|0
+9|372|笛|flute|0
+9|373|鉄|iron|0
+9|374|転|revolve|0
+9|375|都|metropolis|0
+9|376|度|degrees|0
+9|377|投|throw|0
+9|378|豆|beans|0
+9|379|島|island|0
+9|380|湯|hot water|0
+9|381|登|climb|0
+9|382|等|class|0
+9|383|動|move|0
+9|384|童|juvenile|0
+9|385|農|farming|0
+9|386|波|wave|0
+9|387|配|distribute|0
+9|388|倍|double|0
+9|389|箱|box|0
+9|390|畑|farm|0
+9|391|発|departure|0
+9|392|反|anti-|0
+9|393|坂|slope|0
+9|394|板|board|0
+9|395|皮|skin|0
+9|396|悲|sad|0
+9|397|美|beauty|0
+9|398|鼻|nose|0
+9|399|筆|writing brush|0
+9|400|氷|ice|0
+9|401|表|express|0
+9|402|秒|second (part of time)|0
+9|403|病|sick|0
+9|404|品|article|0
+9|405|負|lose|0
+9|406|部|part|0
+9|407|服|clothes|0
+9|408|福|luck|0
+9|409|物|thing|0
+9|410|平|flat|0
+9|411|返|return|0
+9|412|勉|exertion|0
+9|413|放|release|0
+9|414|味|flavor|0
+9|415|命|fate|0
+9|416|面|face|0
+9|417|問|question|0
+9|418|役|service|0
+9|419|薬|medicine|0
+9|420|由|reason|0
+9|421|油|oil|0
+9|422|有|have|0
+9|423|遊|play|0
+9|424|予|in advance|0
+9|425|羊|sheep|0
+9|426|洋|ocean|0
+9|427|葉|leaf|0
+9|428|陽|sunshine|0
+9|429|様|formal title|0
+9|430|落|fall|0
+9|431|流|stream|0
+9|432|旅|trip|0
+9|433|両|both|0
+9|434|緑|green|0
+9|435|礼|thanks|0
+9|436|列|row|0
+9|437|練|practice|0
+9|438|路|road|0
+9|439|和|peace|0
+1|440|愛|love|0
+1|441|案|plan|0
+1|442|以|by means of|0
+1|443|衣|clothes|0
+1|444|位|rank|0
+1|445|囲|surround|0
+1|446|胃|stomach|0
+1|447|印|mark|0
+1|448|英|England|0
+1|449|栄|prosperity|0
+1|450|塩|salt|0
+1|451|億|hundred million|0
+1|452|加|add|0
+1|453|果|fruit|0
+1|454|貨|freight|0
+1|455|課|section|0
+1|456|芽|bud|0
+1|457|改|reformation|0
+1|458|械|contraption|0
+1|459|害|harm|0
+1|460|街|street|0
+1|461|各|each|0
+1|462|覚|memorize|0
+1|463|完|perfect|0
+1|464|官|government official|0
+1|465|管|pipe|0
+1|466|関|related|0
+1|467|観|observe|0
+1|468|願|request|0
+1|469|希|hope|0
+1|470|季|seasons|0
+1|471|紀|chronicle|0
+1|472|喜|rejoice|0
+1|473|旗|national flag|0
+1|474|器|container|0
+1|475|機|machine|0
+1|476|議|deliberation|0
+1|477|求|request|0
+1|478|泣|cry|0
+1|479|救|salvation|0
+1|480|給|salary|0
+1|481|挙|raise|0
+1|482|漁|fishing|0
+1|483|共|together|0
+1|484|協|cooperation|0
+1|485|鏡|mirror|0
+1|486|競|compete|0
+1|487|極|poles|0
+1|488|訓|instruction|0
+1|489|軍|army|0
+1|490|郡|county|0
+1|491|径|diameter|0
+1|492|型|model|0
+1|493|景|scenery|0
+1|494|芸|art|0
+1|495|欠|lack|0
+1|496|結|tie|0
+1|497|建|build|0
+1|498|健|healthy|0
+1|499|験|test|0
+1|500|固|hard|0
+1|501|功|achievement|0
+1|502|好|like|0
+1|503|候|climate|0
+1|504|航|cruise|0
+1|505|康|health|0
+1|506|告|tell|0
+1|507|差|distinction|0
+1|508|菜|vegetable|0
+1|509|最|most|0
+1|510|材|lumber|0
+1|511|昨|previous|0
+1|512|札|tag|0
+1|513|刷|printing|0
+1|514|殺|kill|0
+1|515|察|guess|0
+1|516|参|participate|0
+1|517|産|give birth|0
+1|518|散|scatter|0
+1|519|残|remainder|0
+1|520|士|gentleman|0
+1|521|氏|family name|0
+1|522|史|history|0
+1|523|司|director|0
+1|524|試|test|0
+1|525|児|child|0
+1|526|治|govern|0
+1|527|辞|resign|0
+1|528|失|lose|0
+1|529|借|borrow|0
+1|530|種|kind|0
+1|531|周|circumference|0
+1|532|祝|celebrate|0
+1|533|順|obey|0
+1|534|初|first|0
+1|535|松|pine|0
+1|536|笑|laugh|0
+1|537|唱|chant|0
+1|538|焼|bake|0
+1|539|象|elephant|0
+1|540|照|illuminate|0
+1|541|賞|prize|0
+1|542|臣|retainer|0
+1|543|信|trust|0
+1|544|成|become|0
+1|545|省|government ministry|0
+1|546|清|pure|0
+1|547|静|quiet|0
+1|548|席|seat|0
+1|549|積|accumulate|0
+1|550|折|fold|0
+1|551|節|node|0
+1|552|説|theory|0
+1|553|浅|shallow|0
+1|554|戦|war|0
+1|555|選|choose|0
+1|556|然|so|0
+1|557|争|conflict|0
+1|558|倉|warehouse|0
+1|559|巣|nest|0
+1|560|束|bundle|0
+1|561|側|side|0
+1|562|続|continue|0
+1|563|卒|graduate|0
+1|564|孫|grandchild|0
+1|565|帯|sash|0
+1|566|隊|group|0
+1|567|達|attain|0
+1|568|単|simple|0
+1|569|置|put|0
+1|570|仲|relationship|0
+1|571|貯|savings|0
+1|572|兆|portent, trillion|0
+1|573|腸|intestines|0
+1|574|低|low|0
+1|575|底|bottom|0
+1|576|停|halt|0
+1|577|的|target|0
+1|578|典|code|0
+1|579|伝|transmit|0
+1|580|徒|junior|0
+1|581|努|toil|0
+1|582|灯|lamp|0
+1|583|堂|public chamber|0
+1|584|働|work|0
+1|585|特|special|0
+1|586|得|acquire|0
+1|587|毒|poison|0
+1|588|熱|heat|0
+1|589|念|thought|0
+1|590|敗|failure|0
+1|591|梅|ume (Japanese apricot)|0
+1|592|博|Dr.|0
+1|593|飯|meal|0
+1|594|飛|fly|0
+1|595|費|expense|0
+1|596|必|without fail|0
+1|597|票|ballot|0
+1|598|標|signpost|0
+1|599|不|non-|0
+1|600|夫|husband|0
+1|601|付|attach|0
+1|602|府|urban prefecture|0
+1|603|副|vice|0
+1|604|粉|flour|0
+1|605|兵|soldier|0
+1|606|別|separate|0
+1|607|辺|environs|0
+1|608|変|change|0
+1|609|便|convenience|0
+1|610|包|wrap|0
+1|611|法|method|0
+1|612|望|hope|0
+1|613|牧|breed|0
+1|614|末|end|0
+1|615|満|full|0
+1|616|未|not yet|0
+1|617|脈|vein|0
+1|618|民|people|0
+1|619|無|nothing|0
+1|620|約|promise|0
+1|621|勇|courage|0
+1|622|要|need|0
+1|623|養|foster|0
+1|624|浴|bathe|0
+1|625|利|profit|0
+1|626|陸|land|0
+1|627|良|good|0
+1|628|料|fee|0
+1|629|量|quantity|0
+1|630|輪|wheel|0
+1|631|類|sort|0
+1|632|令|orders|0
+1|633|冷|cool|0
+1|634|例|example|0
+1|635|歴|curriculum|0
+1|636|連|take along|0
+1|637|老|old man|0
+1|638|労|labour|0
+1|639|録|record|0
+10|640|圧|pressure|0
+10|641|移|shift|0
+10|642|因|cause|0
+10|643|永|eternity|0
+10|644|営|manage|0
+10|645|衛|defense|0
+10|646|易|easy|0
+10|647|益|benefit|0
+10|648|液|fluid|0
+10|649|演|perform|0
+10|650|応|respond|0
+10|651|往|outward journey|0
+10|652|桜|cherry tree|0
+10|653|恩|grace|0
+10|654|可|possible|0
+10|655|仮|temporary|0
+10|656|価|value|0
+10|657|河|river|0
+10|658|過|go beyond|0
+10|659|賀|congratulations|0
+10|660|快|cheerful|0
+10|661|解|untie|0
+10|662|格|status|0
+10|663|確|certain|0
+10|664|額|amount|0
+10|665|刊|publish|0
+10|666|幹|tree-trunk|0
+10|667|慣|accustomed|0
+10|668|眼|eyeball|0
+10|669|基|foundation|0
+10|670|寄|approach|0
+10|671|規|rule|0
+10|672|技|skill|0
+10|673|義|righteousness|0
+10|674|逆|inverted|0
+10|675|久|long time|0
+10|676|旧|old times|0
+10|677|居|reside|0
+10|678|許|permit|0
+10|679|境|boundary|0
+10|680|均|level|0
+10|681|禁|prohibition|0
+10|682|句|phrase|0
+10|683|群|flock|0
+10|684|経|manage|0
+10|685|潔|undefiled|0
+10|686|件|affair|0
+10|687|券|ticket|0
+10|688|険|precipitous|0
+10|689|検|examine|0
+10|690|限|limit|0
+10|691|現|appear|0
+10|692|減|decrease|0
+10|693|故|circumstances|0
+10|694|個|individual|0
+10|695|護|safeguard|0
+10|696|効|effect|0
+10|697|厚|thick|0
+10|698|耕|till|0
+10|699|鉱|mineral|0
+10|700|構|construct|0
+10|701|興|entertain|0
+10|702|講|lecture|0
+10|703|混|mix|0
+10|704|査|investigate|0
+10|705|再|again|0
+10|706|災|disaster|0
+10|707|妻|wife|0
+10|708|採|pick|0
+10|709|際|occasion|0
+10|710|在|exist|0
+10|711|財|wealth|0
+10|712|罪|guilt|0
+10|713|雑|miscellaneous|0
+10|714|酸|acid|0
+10|715|賛|approve|0
+10|716|支|branch|0
+10|717|志|intention|0
+10|718|枝|branch|0
+10|719|師|expert|0
+10|720|資|resources|0
+10|721|飼|domesticate|0
+10|722|示|indicate|0
+10|723|似|becoming|0
+10|724|識|discriminating|0
+10|725|質|quality|0
+10|726|舎|cottage|0
+10|727|謝|apologize|0
+10|728|授|instruct|0
+10|729|修|discipline|0
+10|730|述|mention|0
+10|731|術|art|0
+10|732|準|standard|0
+10|733|序|preface|0
+10|734|招|beckon|0
+10|735|承|acquiesce|0
+10|736|証|evidence|0
+10|737|条|clause|0
+10|738|状|form|0
+10|739|常|normal|0
+10|740|情|feelings|0
+10|741|織|weave|0
+10|742|職|employment|0
+10|743|制|control|0
+10|744|性|gender|0
+10|745|政|politics|0
+10|746|勢|power|0
+10|747|精|refined|0
+10|748|製|manufacture|0
+10|749|税|tax|0
+10|750|責|blame|0
+10|751|績|exploits|0
+10|752|接|contact|0
+10|753|設|establish|0
+10|754|舌|tongue|0
+10|755|絶|discontinue|0
+10|756|銭|coin|0
+10|757|祖|ancestor|0
+10|758|素|elementary|0
+10|759|総|whole|0
+10|760|造|create|0
+10|761|像|statue|0
+10|762|増|increase|0
+10|763|則|rule|0
+10|764|測|fathom|0
+10|765|属|belong|0
+10|766|率|rate|0
+10|767|損|loss|0
+10|768|退|retreat|0
+10|769|貸|lend|0
+10|770|態|condition|0
+10|771|団|group|0
+10|772|断|cut off|0
+10|773|築|fabricate|0
+10|774|張|stretch|0
+10|775|提|present|0
+10|776|程|extent|0
+10|777|適|suitable|0
+10|778|敵|enemy|0
+10|779|統|unite|0
+10|780|銅|copper|0
+10|781|導|guide|0
+10|782|徳|benevolence|0
+10|783|独|alone|0
+10|784|任|responsibility|0
+10|785|燃|burn|0
+10|786|能|ability|0
+10|787|破|rend|0
+10|788|犯|crime|0
+10|789|判|judge|0
+10|790|版|printing block|0
+10|791|比|compare|0
+10|792|肥|fertilizer|0
+10|793|非|negative|0
+10|794|備|provide|0
+10|795|俵|bag|0
+10|796|評|evaluate|0
+10|797|貧|poor|0
+10|798|布|linen|0
+10|799|婦|lady|0
+10|800|富|rich|0
+10|801|武|military|0
+10|802|復|again|0
+10|803|複|duplicate|0
+10|804|仏|Buddha|0
+10|805|編|compile|0
+10|806|弁|valve|0
+10|807|保|preserve|0
+10|808|墓|grave|0
+10|809|報|report|0
+10|810|豊|bountiful|0
+10|811|防|prevent|0
+10|812|貿|trade|0
+10|813|暴|outburst|0
+10|814|務|duty|0
+10|815|夢|dream|0
+10|816|迷|astray|0
+10|817|綿|cotton|0
+10|818|輸|transport|0
+10|819|余|leave over|0
+10|820|預|deposit|0
+10|821|容|contain|0
+10|822|略|abbreviation|0
+10|823|留|detain|0
+10|824|領|territory|0
+8|825|異|uncommon|0
+8|826|遺|bequeath|0
+8|827|域|range|0
+8|828|宇|eaves|0
+8|829|映|reflect|0
+8|830|延|prolong|0
+8|831|沿|run alongside|0
+8|832|我|ego|0
+8|833|灰|ashes|0
+8|834|拡|broaden|0
+8|835|革|leather|0
+8|836|閣|tall|0
+8|837|割|divide|0
+8|838|株|stocks|0
+8|839|干|dry|0
+8|840|巻|scroll|0
+8|841|看|watch over|0
+8|842|簡|simplicity|0
+8|843|危|dangerous|0
+8|844|机|desk|0
+8|845|揮|brandish|0
+8|846|貴|precious|0
+8|847|疑|doubt|0
+8|848|吸|suck|0
+8|849|供|offer|0
+8|850|胸|bosom|0
+8|851|郷|home town|0
+8|852|勤|diligence|0
+8|853|筋|muscle|0
+8|854|系|lineage|0
+8|855|敬|respect|0
+8|856|警|guard against|0
+8|857|劇|drama|0
+8|858|激|violent|0
+8|859|穴|hole|0
+8|860|絹|silk|0
+8|861|権|rights|0
+8|862|憲|constitution|0
+8|863|源|origin|0
+8|864|厳|strict|0
+8|865|己|self|0
+8|866|呼|call|0
+8|867|誤|mistake|0
+8|868|后|empress|0
+8|869|孝|filial piety|0
+8|870|皇|emperor|0
+8|871|紅|deep red|0
+8|872|降|descend|0
+8|873|鋼|steel|0
+8|874|刻|engrave|0
+8|875|穀|cereals|0
+8|876|骨|bone|0
+8|877|困|become distressed|0
+8|878|砂|sand|0
+8|879|座|sit|0
+8|880|済|settle|0
+8|881|裁|judge|0
+8|882|策|scheme|0
+8|883|冊|counter for books|0
+8|884|蚕|silkworm|0
+8|885|至|climax|0
+8|886|私|me|0
+8|887|姿|figure|0
+8|888|視|look at|0
+8|889|詞|poetry|0
+8|890|誌|document|0
+8|891|磁|magnet|0
+8|892|射|shoot|0
+8|893|捨|throw away|0
+8|894|尺|shaku|0
+8|895|若|young|0
+8|896|樹|trees|0
+8|897|収|take in|0
+8|898|宗|religion|0
+8|899|就|concerning|0
+8|900|衆|masses|0
+8|901|従|obey|0
+8|902|縦|vertical|0
+8|903|縮|shrink|0
+8|904|熟|ripen|0
+8|905|純|genuine|0
+8|906|処|dispose|0
+8|907|署|government office|0
+8|908|諸|various|0
+8|909|除|exclude|0
+8|910|将|leader|0
+8|911|傷|wound|0
+8|912|障|hurt|0
+8|913|城|castle|0
+8|914|蒸|steam|0
+8|915|針|needle|0
+8|916|仁|humanity|0
+8|917|垂|droop|0
+8|918|推|infer|0
+8|919|寸|measurement|0
+8|920|盛|prosper|0
+8|921|聖|holy|0
+8|922|誠|sincerity|0
+8|923|宣|proclaim|0
+8|924|専|specialty|0
+8|925|泉|spring|0
+8|926|洗|wash|0
+8|927|染|dye|0
+8|928|善|good|0
+8|929|奏|play music|0
+8|930|窓|window|0
+8|931|創|create|0
+8|932|装|attire|0
+8|933|層|stratum|0
+8|934|操|maneuver|0
+8|935|蔵|warehouse|0
+8|936|臓|entrails|0
+8|937|存|suppose|0
+8|938|尊|revered|0
+8|939|宅|home|0
+8|940|担|shouldering|0
+8|941|探|grope|0
+8|942|誕|nativity|0
+8|943|段|steps|0
+8|944|暖|warmth|0
+8|945|値|value|0
+8|946|宙|mid-air|0
+8|947|忠|loyalty|0
+8|948|著|renowned|0
+8|949|庁|government office|0
+8|950|頂|place on the head|0
+8|951|潮|tide|0
+8|952|賃|fare|0
+8|953|痛|pain|0
+8|954|展|expand|0
+8|955|討|chastise|0
+8|956|党|group|0
+8|957|糖|sugar|0
+8|958|届|deliver|0
+8|959|難|difficult|0
+8|960|乳|milk|0
+8|961|認|recognize|0
+8|962|納|settlement|0
+8|963|脳|brain|0
+8|964|派|sect|0
+8|965|拝|worship|0
+8|966|背|back|0
+8|967|肺|lungs|0
+8|968|俳|haiku|0
+8|969|班|squad|0
+8|970|晩|nightfall|0
+8|971|否|negate|0
+8|972|批|criticism|0
+8|973|秘|secret|0
+8|974|腹|abdomen|0
+8|975|奮|stirred up|0
+8|976|並|line-up|0
+8|977|陛|highness|0
+8|978|閉|closed|0
+8|979|片|one-sided|0
+8|980|補|supplement|0
+8|981|暮|livelihood|0
+8|982|宝|treasure|0
+8|983|訪|visit|0
+8|984|亡|deceased|0
+8|985|忘|forget|0
+8|986|棒|rod|0
+8|987|枚|sheet of...|0
+8|988|幕|curtain|0
+8|989|密|secrecy|0
+8|990|盟|alliance|0
+8|991|模|imitation|0
+8|992|訳|translate|0
+8|993|郵|mail|0
+8|994|優|superior|0
+8|995|幼|infancy|0
+8|996|欲|longing|0
+8|997|翌|the following|0
+8|998|乱|riot|0
+8|999|卵|egg|0
+8|1000|覧|perusal|0
+8|1001|裏|back|0
+8|1002|律|law|0
+8|1003|臨|look to|0
+8|1004|朗|melodious|0
+8|1005|論|theory|0
+7|1006|亜|sub-|0
+7|1007|哀|pathetic|0
+7|1008|挨|push open|0
+7|1009|曖|not clear|0
+7|1010|握|grip|0
+7|1011|扱|handle|0
+7|1012|宛|allocate|0
+7|1013|嵐|storm|0
+7|1014|依|reliant|0
+7|1015|威|intimidate|0
+7|1016|為|do|0
+7|1017|畏|fear|0
+7|1018|尉|military officer|0
+7|1019|萎|wither|0
+7|1020|偉|admirable|0
+7|1021|椅|chair|0
+7|1022|彙|same kind|0
+7|1023|違|differ|0
+7|1024|維|fiber|0
+7|1025|慰|consolation|0
+7|1026|緯|horizontal|0
+7|1027|壱|one (Falsification prevention)|0
+7|1028|逸|deviate|0
+7|1029|茨 |thorn|0
+7|1030|芋|potato|0
+7|1031|咽|throat|0
+7|1032|姻|matrimony|0
+7|1033|淫 |lewdness|0
+7|1034|陰|shade|0
+7|1035|隠|conceal|0
+7|1036|韻|rhyme|0
+7|1037|唄|songs with samisen|0
+7|1038|鬱|gloom|0
+7|1039|畝|furrow|0
+7|1040|浦|bay|0
+7|1041|詠|recitation|0
+7|1042|影|shadow|0
+7|1043|鋭|pointed|0
+7|1044|疫|epidemic|0
+7|1045|悦|ecstasy|0
+7|1046|越|cross over|0
+7|1047|謁|audience|0
+7|1048|閲|review|0
+7|1049|炎|inflammation|0
+7|1050|怨|grudge|0
+7|1051|宴|banquet|0
+7|1052|媛|princess|0
+7|1053|援|aid|0
+7|1054|煙|smoke|0
+7|1055|猿|monkey|0
+7|1056|鉛|lead|0
+7|1057|縁|affinity|0
+7|1058|艶|glossy|0
+7|1059|汚|dirty|0
+7|1060|凹|concave|0
+7|1061|押|push|0
+7|1062|旺|flourishing|0
+7|1063|欧|Europe|0
+7|1064|殴|assault|0
+7|1065|翁|venerable old man|0
+7|1066|奥|heart|0
+7|1067|岡|hill|0
+7|1068|憶|recollection|0
+7|1069|臆|timidity|0
+7|1070|虞|uneasiness|0
+7|1071|乙|the latter|0
+7|1072|俺|I, we|0
+7|1073|卸|wholesale|0
+7|1074|穏|calm|0
+7|1075|佳|excellent|0
+7|1076|苛|torment|0
+7|1077|架|rack|0
+7|1078|華|splendor|0
+7|1079|菓|confectionery|0
+7|1080|渦|whirlpool|0
+7|1081|嫁|marry into|0
+7|1082|暇|spare time|0
+7|1083|禍|calamity|0
+7|1084|靴|shoes|0
+7|1085|寡|widow|0
+7|1086|箇|counters for things|0
+7|1087|稼|earnings|0
+7|1088|蚊|mosquito|0
+7|1089|牙 |tusk|0
+7|1090|瓦|tile|0
+7|1091|雅|gracious|0
+7|1092|餓|starve|0
+7|1093|介|jammed in|0
+7|1094|戒|commandment|0
+7|1095|怪|suspicious|0
+7|1096|拐|kidnap|0
+7|1097|悔|repent|0
+7|1098|皆|all|0
+7|1099|塊|clod|0
+7|1100|楷|square character style|0
+7|1101|潰|crush|0
+7|1102|壊|demolition|0
+7|1103|懐|pocket|0
+7|1104|諧|harmony|0
+7|1105|劾|censure|0
+7|1106|崖|cliff|0
+7|1107|涯|horizon|0
+7|1108|慨|rue|0
+7|1109|蓋|cover|0
+7|1110|該|above-stated|0
+7|1111|概|outline|0
+7|1112|骸|dead remains|0
+7|1113|垣|hedge|0
+7|1114|柿|persimmon|0
+7|1115|核|nucleus|0
+7|1116|殻|husk|0
+7|1117|郭|enclosure|0
+7|1118|較|contrast|0
+7|1119|隔|isolate|0
+7|1120|獲|seize|0
+7|1121|嚇|menacing|0
+7|1122|穫|harvest|0
+7|1123|岳|point|0
+7|1124|顎|jaw|0
+7|1125|掛|hang|0
+7|1126|潟|lagoon|0
+7|1127|括|fasten|0
+7|1128|喝|hoarse|0
+7|1129|渇|thirst|0
+7|1130|葛 |arrowroot|0
+7|1131|滑|slippery|0
+7|1132|褐|brown|0
+7|1133|轄|control|0
+7|1134|且|moreover|0
+7|1135|釜|kettle|0
+7|1136|鎌|sickle|0
+7|1137|刈|reap|0
+7|1138|甘|sweet|0
+7|1139|汗|sweat|0
+7|1140|缶|tin can|0
+7|1141|肝|liver|0
+7|1142|冠|crown|0
+7|1143|陥|collapse|0
+7|1144|乾|dry|0
+7|1145|勘|intuition|0
+7|1146|患|afflicted|0
+7|1147|貫|pierce|0
+7|1148|喚|yell|0
+7|1149|堪|withstand|0
+7|1150|換|interchange|0
+7|1151|敢|daring|0
+7|1152|棺|coffin|0
+7|1153|款|goodwill|0
+7|1154|閑|leisure|0
+7|1155|勧|persuade|0
+7|1156|寛|tolerant|0
+7|1157|歓|delight|0
+7|1158|監|oversee|0
+7|1159|緩|slacken|0
+7|1160|憾|remorse|0
+7|1161|還|send back|0
+7|1162|環|ring|0
+7|1163|韓 |Korea|0
+7|1164|艦|warship|0
+7|1165|鑑|specimen|0
+7|1166|含|include|0
+7|1167|玩|trifle with|0
+7|1168|頑|stubborn|0
+7|1169|企|plan|0
+7|1170|伎|deed|0
+7|1171|岐|branch off|0
+7|1172|忌|mourning|0
+7|1173|奇|strange|0
+7|1174|祈|pray|0
+7|1175|軌|rut|0
+7|1176|既|previously|0
+7|1177|飢|hungry|0
+7|1178|鬼|ghost|0
+7|1179|亀|turtle|0
+7|1180|幾|how many|0
+7|1181|棋|chess piece|0
+7|1182|棄|abandon|0
+7|1183|毀|destroy|0
+7|1184|畿|capital|0
+7|1185|輝|radiance|0
+7|1186|騎|equestrian|0
+7|1187|宜|best regards|0
+7|1188|偽|falsehood|0
+7|1189|欺|deceit|0
+7|1190|儀|ceremony|0
+7|1191|戯|frolic|0
+7|1192|擬|mimic|0
+7|1193|犠|sacrifice|0
+7|1194|菊|chrysanthemum|0
+7|1195|吉|good luck|0
+7|1196|喫|consume|0
+7|1197|詰|packed|0
+7|1198|却|instead|0
+7|1199|脚|leg|0
+7|1200|虐|tyrannize|0
+7|1201|及|reach out|0
+7|1202|丘|hill|0
+7|1203|朽|decay|0
+7|1204|臼|mortar|0
+7|1205|糾|twist|0
+7|1206|嗅|smell|0
+7|1207|窮|hard up|0
+7|1208|巨|gigantic|0
+7|1209|拒|repel|0
+7|1210|拠|foothold|0
+7|1211|虚|void|0
+7|1212|距|long-distance|0
+7|1213|御|honorable|0
+7|1214|凶|villain|0
+7|1215|叫|shout|0
+7|1216|狂|lunatic|0
+7|1217|享|receive|0
+7|1218|況|condition|0
+7|1219|峡|gorge|0
+7|1220|挟|pinch|0
+7|1221|狭|cramped|0
+7|1222|恐|fear|0
+7|1223|恭|respect|0
+7|1224|脅|threaten|0
+7|1225|矯|rectify|0
+7|1226|響|echo|0
+7|1227|驚|wonder|0
+7|1228|仰|face-up|0
+7|1229|暁|daybreak|0
+7|1230|凝|congeal|0
+7|1231|巾|towel|0
+5|1232|斤|axe|0
+5|1233|菌|germ|0
+5|1234|琴|harp|0
+5|1235|僅 |a wee bit|0
+5|1236|緊|tense|0
+5|1237|錦|brocade|0
+5|1238|謹|discreet|0
+5|1239|襟|collar|0
+5|1240|吟|versify|0
+5|1241|駆|drive|0
+5|1242|惧|dread|0
+5|1243|愚|foolish|0
+5|1244|偶|accidentally|0
+5|1245|遇|interview|0
+5|1246|隅|corner|0
+5|1247|串|skewer|0
+5|1248|屈|yield|0
+5|1249|掘|dig|0
+5|1250|窟|cavern|0
+5|1251|熊|bear|0
+5|1252|繰|winding|0
+5|1253|勲|meritorious deed|0
+5|1254|薫|fragrant|0
+5|1255|刑|punish|0
+5|1256|茎|stalk|0
+5|1257|契|pledge|0
+5|1258|恵|favor|0
+5|1259|啓|disclose|0
+5|1260|掲|put up (a notice)|0
+5|1261|渓|mountain stream|0
+5|1262|蛍|lightning-bug|0
+5|1263|傾|lean|0
+5|1264|携|portable|0
+5|1265|継|inherit|0
+5|1266|詣|visit a temple|0
+5|1267|慶|jubilation|0
+5|1268|憬|long for|0
+5|1269|稽|consider|0
+5|1270|憩|recess|0
+5|1271|鶏|chicken|0
+5|1272|迎|welcome|0
+5|1273|鯨|whale|0
+5|1274|隙|fissure|0
+5|1275|撃|beat|0
+5|1276|桁|beam|0
+5|1277|傑|greatness|0
+5|1278|肩|shoulder|0
+5|1279|倹|frugal|0
+5|1280|兼|concurrently|0
+5|1281|剣|sabre|0
+5|1282|拳|fist|0
+5|1283|軒|flats|0
+5|1284|圏|sphere|0
+5|1285|堅|strict|0
+5|1286|嫌|dislike|0
+5|1287|献|offering|0
+5|1288|遣|dispatch|0
+5|1289|賢|intelligent|0
+5|1290|謙|self-effacing|0
+5|1291|鍵|key|0
+5|1292|繭|cocoon|0
+5|1293|顕|appear|0
+5|1294|懸|suspend|0
+5|1295|幻|phantasm|0
+5|1296|玄|mysterious|0
+5|1297|弦|bowstring|0
+5|1298|舷|gunwale|0
+5|1299|股|crotch|0
+5|1300|虎|tiger|0
+5|1301|孤|orphan|0
+5|1302|弧|arc|0
+5|1303|枯|wither|0
+5|1304|雇|employ|0
+5|1305|誇|boast|0
+5|1306|鼓|drum|0
+5|1307|錮|tie up|0
+5|1308|顧|look back|0
+5|1309|互|mutually|0
+5|1310|呉|give|0
+5|1311|娯|recreation|0
+5|1312|悟|enlightenment|0
+5|1313|碁|Go|0
+5|1314|勾|capture|0
+5|1315|孔|cavity|0
+5|1316|巧|adroit|0
+5|1317|甲|armor|0
+5|1318|江|inlet|0
+5|1319|坑|pit|0
+5|1320|抗|confront|0
+5|1321|攻|aggression|0
+5|1322|更|grow late|0
+5|1323|拘|arrest|0
+5|1324|肯|agreement|0
+5|1325|侯|marquis|0
+5|1326|恒|constancy|0
+5|1327|洪|deluge|0
+5|1328|荒|laid waste|0
+5|1329|郊|outskirts|0
+5|1330|香|incense|0
+5|1331|貢|tribute|0
+5|1332|控|withdraw|0
+5|1333|梗|close up|0
+5|1334|喉|throat|0
+5|1335|慌|disconcerted|0
+5|1336|硬|stiff|0
+5|1337|絞|strangle|0
+5|1338|項|paragraph|0
+5|1339|溝|gutter|0
+5|1340|綱|hawser|0
+5|1341|酵|fermentation|0
+5|1342|稿|draft|0
+5|1343|衡|equilibrium|0
+5|1344|購|subscription|0
+5|1345|乞|beg|0
+5|1346|拷|torture|0
+5|1347|剛|sturdy|0
+5|1348|傲|be proud|0
+5|1349|豪|overpowering|0
+5|1350|克|overcome|0
+5|1351|酷|cruel|0
+5|1352|獄|prison|0
+5|1353|駒|horse|0
+5|1354|込|crowded|0
+5|1355|頃|times|0
+5|1356|昆|descendants|0
+5|1357|恨|rancor|0
+5|1358|婚|marriage|0
+5|1359|痕|mark|0
+5|1360|紺|dark blue|0
+5|1361|魂|soul|0
+5|1362|墾|ground-breaking|0
+5|1363|懇|sociable|0
+5|1364|佐|help|0
+5|1365|沙|sand|0
+5|1366|唆|tempt|0
+5|1367|詐|lie|0
+5|1368|鎖|chain|0
+5|1369|挫|sprain|0
+5|1370|采|form|0
+5|1371|砕|smash|0
+5|1372|宰|superintend|0
+5|1373|栽|plantation|0
+5|1374|彩|coloring|0
+5|1375|斎|purification|0
+5|1376|債|bond|0
+5|1377|催|sponsor|0
+5|1378|塞|obstruct|0
+5|1379|歳|year-end|0
+5|1380|載|ride|0
+5|1381|埼|cape (geography)|0
+5|1382|剤|dose|0
+5|1383|崎|promontory|0
+5|1384|削|plane|0
+5|1385|柵|fence|0
+5|1386|索|cord|0
+5|1387|酢|vinegar|0
+5|1388|搾|squeeze|0
+5|1389|錯|confused|0
+5|1390|咲|blossom|0
+5|1391|刹|temple|0
+5|1392|拶|be imminent|0
+5|1393|撮|snapshot|0
+5|1394|擦|grate|0
+5|1395|桟|scaffold|0
+5|1396|惨|wretched|0
+5|1397|傘|umbrella|0
+5|1398|斬|kill by slicing|0
+5|1399|暫|temporarily|0
+5|1400|旨|delicious|0
+5|1401|伺|pay respects|0
+5|1402|刺|thorn|0
+5|1403|祉|welfare|0
+5|1404|肢|limb|0
+5|1405|施|carry out|0
+5|1406|恣|selfish|0
+5|1407|脂|fat|0
+5|1408|紫|purple|0
+5|1409|嗣|heir|0
+5|1410|雌|feminine|0
+5|1411|摯|seriousness|0
+5|1412|賜|grant|0
+5|1413|諮|consult with|0
+5|1414|侍|waiter|0
+5|1415|滋|nourishing|0
+5|1416|慈|mercy|0
+5|1417|餌 |bait|0
+5|1418|璽|emperor's seal|0
+5|1419|鹿|deer|0
+5|1420|軸|axis|0
+5|1421|𠮟 |scold|0
+5|1422|疾|rapidly|0
+5|1423|執|tenacious|0
+5|1424|湿|damp|0
+5|1425|嫉|envy|0
+5|1426|漆|lacquer|0
+5|1427|芝|turf|0
+5|1428|赦|pardon|0
+5|1429|斜|diagonal|0
+5|1430|煮|boil|0
+5|1431|遮|intercept|0
+5|1432|邪|wicked|0
+5|1433|蛇|snake|0
+5|1434|酌|bartending|0
+5|1435|釈|explanation|0
+5|1436|爵|baron|0
+5|1437|寂|loneliness|0
+5|1438|朱|vermilion|0
+5|1439|狩|hunt|0
+5|1440|殊|particularly|0
+5|1441|珠|pearl|0
+5|1442|腫|tumor|0
+5|1443|趣|gist|0
+5|1444|寿|longevity|0
+5|1445|呪|curse|0
+5|1446|需|demand|0
+5|1447|儒|Confucian|0
+5|1448|囚|captured|0
+5|1449|舟|boat|0
+5|1450|秀|excel|0
+5|1451|臭|stinking|0
+5|1452|袖|sleeve|0
+5|1453|羞|feel ashamed|0
+5|1454|愁|distress|0
+5|1455|酬|repay|0
+5|1456|醜|ugly|0
+5|1457|蹴|kick|0
+4|1458|襲|attack|0
+4|1459|汁|soup|0
+4|1460|充|allot|0
+4|1461|柔|tender|0
+4|1462|渋|astringent|0
+4|1463|銃|gun|0
+4|1464|獣|animal|0
+4|1465|叔|uncle|0
+4|1466|淑|graceful|0
+4|1467|粛|solemn|0
+4|1468|塾|cram school|0
+4|1469|俊|genius|0
+4|1470|瞬|wink|0
+4|1471|旬|10-day period (of the month)|0
+4|1472|巡|patrol|0
+4|1473|盾|shield|0
+4|1474|准|quasi-|0
+4|1475|殉|martyrdom|0
+4|1476|循|sequential|0
+4|1477|潤|wet|0
+4|1478|遵|abide by|0
+4|1479|庶|commoner|0
+4|1480|緒|thong|0
+4|1481|如|likeness|0
+4|1482|叙|confer|0
+4|1483|徐|gradually|0
+4|1484|升|measuring box|0
+4|1485|召|summon|0
+4|1486|匠|artisan|0
+4|1487|床|bed|0
+4|1488|抄|extract|0
+4|1489|肖|resemblance|0
+4|1490|尚|esteem|0
+4|1491|昇|rise up|0
+4|1492|沼|marsh|0
+4|1493|宵|wee hours|0
+4|1494|症|symptoms|0
+4|1495|祥|auspicious|0
+4|1496|称|appellation|0
+4|1497|渉|ford|0
+4|1498|紹|introduce|0
+4|1499|訟|sue|0
+4|1500|掌|manipulate|0
+4|1501|晶|sparkle|0
+4|1502|焦|char|0
+4|1503|硝|nitrate|0
+4|1504|粧|cosmetics|0
+4|1505|詔|imperial edict|0
+4|1506|奨|exhort|0
+4|1507|詳|detailed|0
+4|1508|彰|patent|0
+4|1509|憧|desire|0
+4|1510|衝|collide|0
+4|1511|償|reparation|0
+4|1512|礁|reef|0
+4|1513|鐘|bell|0
+4|1514|丈|length|0
+4|1515|冗|superfluous|0
+4|1516|浄|clean|0
+4|1517|剰|surplus|0
+4|1518|畳|tatami mat|0
+4|1519|縄|straw rope|0
+4|1520|壌|lot|0
+4|1521|嬢|lass|0
+4|1522|錠|lock|0
+4|1523|譲|defer|0
+4|1524|醸|brew|0
+4|1525|拭|wipe|0
+4|1526|殖|augment|0
+4|1527|飾|decorate|0
+4|1528|触|contact|0
+4|1529|嘱|entrust|0
+4|1530|辱|embarrass|0
+4|1531|尻|buttocks|0
+4|1532|伸|lengthen|0
+4|1533|芯|core|0
+4|1534|辛|spicy|0
+4|1535|侵|encroach|0
+4|1536|津|haven|0
+4|1537|唇|lips|0
+4|1538|娠|with child|0
+4|1539|振|shake|0
+4|1540|浸|immersed|0
+4|1541|紳|sire|0
+4|1542|診|checkup|0
+4|1543|寝|lie down|0
+4|1544|慎|humility|0
+4|1545|審|examine|0
+4|1546|震|quake|0
+4|1547|薪|fuel|0
+4|1548|刃|blade|0
+4|1549|尽|exhaust|0
+4|1550|迅|swift|0
+4|1551|甚|tremendously|0
+4|1552|陣|camp|0
+4|1553|尋|inquire|0
+4|1554|腎|kidney|0
+4|1555|須|by all means|0
+4|1556|吹|blow|0
+4|1557|炊|cook|0
+4|1558|帥|commander|0
+4|1559|粋|chic|0
+4|1560|衰|decline|0
+4|1561|酔|drunk|0
+4|1562|遂|consummate|0
+4|1563|睡|drowsy|0
+4|1564|穂|ear|0
+4|1565|随|follow|0
+4|1566|髄|marrow|0
+4|1567|枢|hinge|0
+4|1568|崇|adore|0
+4|1569|据|set|0
+4|1570|杉|cedar|0
+4|1571|裾|cuff|0
+4|1572|瀬|rapids|0
+4|1573|是|just so|0
+4|1574|井|well|0
+4|1575|姓|surname|0
+4|1576|征|subjugate|0
+4|1577|斉|adjusted|0
+4|1578|牲|animal sacrifice|0
+4|1579|凄|uncanny|0
+4|1580|逝|departed|0
+4|1581|婿|bridegroom|0
+4|1582|誓|vow|0
+4|1583|請|solicit|0
+4|1584|醒|be disillusioned|0
+4|1585|斥|reject|0
+4|1586|析|chop|0
+4|1587|脊|stature|0
+4|1588|隻|vessels|0
+4|1589|惜|pity|0
+4|1590|戚|grieve|0
+4|1591|跡|tracks|0
+4|1592|籍|enroll|0
+4|1593|拙|bungling|0
+4|1594|窃|stealth|0
+4|1595|摂|vicarious|0
+4|1596|仙|hermit|0
+4|1597|占|fortune telling|0
+4|1598|扇|fan|0
+4|1599|栓|plug|0
+4|1600|旋|rotation|0
+4|1601|煎 |broil|0
+4|1602|羨|envy|0
+4|1603|腺|gland|0
+4|1604|詮 |discussion|0
+4|1605|践|tread|0
+4|1606|箋|paper|0
+4|1607|潜|submerge|0
+4|1608|遷|transition|0
+4|1609|薦|recommend|0
+4|1610|繊|slender|0
+4|1611|鮮|fresh|0
+4|1612|禅|Zen|0
+4|1613|漸|steadily|0
+4|1614|膳|tray|0
+4|1615|繕|darning|0
+4|1616|狙|aim at|0
+4|1617|阻|thwart|0
+4|1618|租|tariff|0
+4|1619|措|set aside|0
+4|1620|粗|coarse|0
+4|1621|疎|alienate|0
+4|1622|訴|sue|0
+4|1623|塑|model|0
+4|1624|遡 |go upstream|0
+4|1625|礎|cornerstone|0
+4|1626|双|pair|0
+4|1627|壮|robust|0
+4|1628|荘|villa|0
+4|1629|捜|search|0
+4|1630|挿|insert|0
+4|1631|桑|mulberry|0
+4|1632|掃|sweep|0
+4|1633|曹|cadet|0
+4|1634|曽|formerly|0
+4|1635|爽|refreshing|0
+4|1636|喪|miss|0
+4|1637|痩|get thin|0
+4|1638|葬|interment|0
+4|1639|僧|Buddhist priest|0
+4|1640|遭|encounter|0
+4|1641|槽|vat|0
+4|1642|踪|remains|0
+4|1643|燥|parch|0
+4|1644|霜|frost|0
+4|1645|騒|boisterous|0
+4|1646|藻|seaweed|0
+4|1647|憎|hate|0
+4|1648|贈|presents|0
+4|1649|即|instant|0
+4|1650|促|stimulate|0
+4|1651|捉|capture|0
+4|1652|俗|vulgar|0
+4|1653|賊|burglar|0
+4|1654|遜 |humble|0
+4|1655|汰|luxury|0
+4|1656|妥|gentle|0
+4|1657|唾|saliva|0
+4|1658|堕|degenerate|0
+4|1659|惰|lazy|0
+4|1660|駄|burdensome|0
+4|1661|耐|resistant|0
+4|1662|怠|neglect|0
+4|1663|胎|womb|0
+4|1664|泰|peaceful|0
+4|1665|堆|piled high|0
+4|1666|袋|sack|0
+4|1667|逮|apprehend|0
+4|1668|替|exchange|0
+4|1669|滞|stagnate|0
+4|1670|戴|be crowned with|0
+4|1671|滝|waterfall|0
+4|1672|択|choose|0
+4|1673|沢|swamp|0
+4|1674|卓|eminent|0
+4|1675|拓|clear (the land)|0
+4|1676|託|consign|0
+4|1677|濯|laundry|0
+4|1678|諾|consent|0
+4|1679|濁|voiced|0
+4|1680|但|however|0
+4|1681|脱|undress|0
+4|1682|奪|rob|0
+4|1683|棚|shelf|0
+3|1684|誰|who (question word)|0
+3|1685|丹|cinnabar|0
+3|1686|旦|daybreak|0
+3|1687|胆|gall bladder|0
+3|1688|淡|thin|0
+3|1689|嘆|sigh|0
+3|1690|端|edge|0
+3|1691|綻|rip|0
+3|1692|鍛|forge|0
+3|1693|弾|bullet|0
+3|1694|壇|podium|0
+3|1695|恥|shame|0
+3|1696|致|(to) do|0
+3|1697|遅|slow|0
+3|1698|痴|stupid|0
+3|1699|稚|immature|0
+3|1700|緻|fine (not coarse)|0
+3|1701|畜|livestock|0
+3|1702|逐|pursue|0
+3|1703|蓄|amass|0
+3|1704|秩|regularity|0
+3|1705|窒|plug up|0
+3|1706|嫡|legitimate wife|0
+3|1707|沖|open sea|0
+3|1708|抽|pluck|0
+3|1709|衷|inmost|0
+3|1710|酎|sake|0
+3|1711|鋳|casting|0
+3|1712|駐|stop-over|0
+3|1713|弔|condolences|0
+3|1714|挑|challenge|0
+3|1715|彫|carve|0
+3|1716|眺|stare|0
+3|1717|釣|angling|0
+3|1718|貼|paste|0
+3|1719|超|transcend|0
+3|1720|跳|hop|0
+3|1721|徴|indications|0
+3|1722|嘲 |ridicule|0
+3|1723|澄|lucidity|0
+3|1724|聴|listen|0
+3|1725|懲|penal|0
+3|1726|勅|imperial order|0
+3|1727|捗 |make progress|0
+3|1728|沈|sink|0
+3|1729|珍|rare|0
+3|1730|朕|majestic plural|0
+3|1731|陳|exhibit|0
+3|1732|鎮|tranquilize|0
+3|1733|椎|oak|0
+3|1734|墜|crash|0
+3|1735|塚|hillock|0
+3|1736|漬|pickling|0
+3|1737|坪|two-mat area|0
+3|1738|爪|claw|0
+3|1739|鶴|crane|0
+3|1740|呈|display|0
+3|1741|廷|courts|0
+3|1742|抵|resist|0
+3|1743|邸|residence|0
+3|1744|亭|pavilion|0
+3|1745|貞|upright|0
+3|1746|帝|sovereign|0
+3|1747|訂|revise|0
+3|1748|逓|relay|0
+3|1749|偵|spy|0
+3|1750|堤|dike|0
+3|1751|艇|rowboat|0
+3|1752|締|tighten|0
+3|1753|諦|abandon|0
+3|1754|泥|mud|0
+3|1755|摘|pinch|0
+3|1756|滴|drip|0
+3|1757|溺 |drown|0
+3|1758|迭|transfer|0
+3|1759|哲|philosophy|0
+3|1760|徹|penetrate|0
+3|1761|撤|remove|0
+3|1762|添|annexed|0
+3|1763|塡 |fill in|0
+3|1764|殿|Mr.|0
+3|1765|斗|Big Dipper|0
+3|1766|吐|spit|0
+3|1767|妬|jealousy|0
+3|1768|途|route|0
+3|1769|渡|transit|0
+3|1770|塗|paint|0
+3|1771|賭 |gamble|0
+3|1772|奴|guy|0
+3|1773|怒|angry|0
+3|1774|到|arrival|0
+3|1775|逃|escape|0
+3|1776|倒|overthrow|0
+3|1777|凍|frozen|0
+3|1778|唐|T'ang|0
+3|1779|桃|peach tree|0
+3|1780|透|transparent|0
+3|1781|悼|lament|0
+3|1782|盗|steal|0
+3|1783|陶|pottery|0
+3|1784|塔|pagoda|0
+3|1785|搭|board|0
+3|1786|棟|ridgepole|0
+3|1787|痘|pox|0
+3|1788|筒|cylinder|0
+3|1789|稲|rice plant|0
+3|1790|踏|step|0
+3|1791|謄|mimeograph|0
+3|1792|藤|wisteria|0
+3|1793|闘|fight|0
+3|1794|騰|inflation|0
+3|1795|洞|den|0
+3|1796|胴|trunk|0
+3|1797|瞳|pupil|0
+3|1798|峠|mountain peak|0
+3|1799|匿|hide|0
+3|1800|督|coach|0
+3|1801|篤|fervent|0
+3|1802|栃 |horse chestnut|0
+3|1803|凸|convex|0
+3|1804|突|stab|0
+3|1805|屯|barracks|0
+3|1806|豚|pork|0
+3|1807|頓|suddenly|0
+3|1808|貪|covet|0
+3|1809|鈍|dull|0
+3|1810|曇|cloudy weather|0
+3|1811|丼|bowl of food|0
+3|1812|那|what|0
+3|1813|奈|what|0
+3|1814|梨|pear tree|0
+3|1815|謎 |riddle|0
+3|1816|鍋|pot|0
+3|1817|軟|soft|0
+3|1818|尼|nun|0
+3|1819|弐|two (falsification prevention)|0
+3|1820|匂|scent|0
+3|1821|虹|rainbow|0
+3|1822|尿|urine|0
+3|1823|妊|pregnancy|0
+3|1824|忍|endure|0
+3|1825|寧|rather|0
+3|1826|捻|twist|0
+3|1827|粘|sticky|0
+3|1828|悩|trouble|0
+3|1829|濃|concentrated|0
+3|1830|把|grasp|0
+3|1831|覇|hegemony|0
+3|1832|婆|old woman|0
+3|1833|罵|insult|0
+3|1834|杯|counter for cupfuls|0
+3|1835|排|repudiate|0
+3|1836|廃|abolish|0
+3|1837|輩|comrade|0
+3|1838|培|cultivate|0
+3|1839|陪|obeisance|0
+3|1840|媒|mediator|0
+3|1841|賠|compensation|0
+3|1842|伯|chief|0
+3|1843|拍|clap|0
+3|1844|泊|overnight|0
+3|1845|迫|urge|0
+3|1846|剝 |peel|0
+3|1847|舶|liner|0
+3|1848|薄|dilute|0
+3|1849|漠|vague|0
+3|1850|縛|truss|0
+3|1851|爆|explode|0
+3|1852|箸 |chopsticks|0
+3|1853|肌|texture|0
+3|1854|鉢|bowl|0
+3|1855|髪|hair of the head|0
+3|1856|伐|fell|0
+3|1857|抜|slip out|0
+3|1858|罰|penalty|0
+3|1859|閥|clique|0
+3|1860|氾|spread out|0
+3|1861|帆|sail|0
+3|1862|汎|pan-|0
+3|1863|伴|consort|0
+3|1864|阪|heights|0
+3|1865|畔|paddy-ridge|0
+3|1866|般|generally|0
+3|1867|販|marketing|0
+3|1868|斑|blemish|0
+3|1869|搬|conveyor|0
+3|1870|煩|anxiety|0
+3|1871|頒|partition|0
+3|1872|範|pattern|0
+3|1873|繁|luxuriant|0
+3|1874|藩|clan|0
+3|1875|蛮|barbarian|0
+3|1876|盤|tray|0
+3|1877|妃|queen|0
+3|1878|彼|he|0
+3|1879|披|expose|0
+3|1880|卑|lowly|0
+3|1881|疲|exhausted|0
+3|1882|被|incur|0
+3|1883|扉|front door|0
+3|1884|碑|tombstone|0
+3|1885|罷|quit|0
+3|1886|避|evade|0
+3|1887|尾|tail|0
+3|1888|眉|eyebrow|0
+3|1889|微|delicate|0
+3|1890|膝|knee|0
+3|1891|肘|elbow|0
+3|1892|匹|equal|0
+3|1893|泌|ooze|0
+3|1894|姫|princess|0
+3|1895|漂|drift|0
+3|1896|苗|seedling|0
+3|1897|描|sketch|0
+3|1898|猫|cat|0
+3|1899|浜|seacoast|0
+3|1900|賓|V.I.P.|0
+3|1901|頻|repeatedly|0
+3|1902|敏|cleverness|0
+3|1903|瓶|flower pot|0
+3|1904|扶|aid|0
+3|1905|怖|dreadful|0
+3|1906|阜|mound|0
+3|1907|附|affixed|0
+3|1908|訃|obituary|0
+3|1909|赴|proceed|0
+2|1910|浮|floating|0
+2|1911|符|token|0
+2|1912|普|universal|0
+2|1913|腐|rot|0
+2|1914|敷|spread|0
+2|1915|膚|skin|0
+2|1916|賦|levy|0
+2|1917|譜|musical score|0
+2|1918|侮|scorn|0
+2|1919|舞|dance|0
+2|1920|封|seal|0
+2|1921|伏|prostrated|0
+2|1922|幅|breadth|0
+2|1923|覆|capsize|0
+2|1924|払|pay|0
+2|1925|沸|seethe|0
+2|1926|紛|distract|0
+2|1927|雰|atmosphere|0
+2|1928|噴|erupt|0
+2|1929|墳|tomb|0
+2|1930|憤|aroused|0
+2|1931|丙|third class|0
+2|1932|併|join|0
+2|1933|柄|design|0
+2|1934|塀|fence|0
+2|1935|幣|cash|0
+2|1936|弊|abuse|0
+2|1937|蔽 |cover|0
+2|1938|餅 |mochi rice cake|0
+2|1939|壁|wall|0
+2|1940|璧|sphere|0
+2|1941|癖|mannerism|0
+2|1942|蔑|ignore|0
+2|1943|偏|partial|0
+2|1944|遍|everywhere|0
+2|1945|哺|suckle|0
+2|1946|捕|catch|0
+2|1947|舗|pavement|0
+2|1948|募|recruit|0
+2|1949|慕|pining|0
+2|1950|簿|register|0
+2|1951|芳|perfume|0
+2|1952|邦|home country|0
+2|1953|奉|observance|0
+2|1954|抱|embrace|0
+2|1955|泡|bubbles|0
+2|1956|胞|placenta|0
+2|1957|俸|salary|0
+2|1958|倣|emulate|0
+2|1959|峰|summit|0
+2|1960|砲|cannon|0
+2|1961|崩|crumble|0
+2|1962|蜂|bee|0
+2|1963|飽|sated|0
+2|1964|褒|praise|0
+2|1965|縫|sew|0
+2|1966|乏|scarce|0
+2|1967|忙|busy|0
+2|1968|坊|boy|0
+2|1969|妨|disturb|0
+2|1970|房|tassel|0
+2|1971|肪|obese|0
+2|1972|某|so-and-so|0
+2|1973|冒|risk|0
+2|1974|剖|divide|0
+2|1975|紡|spinning|0
+2|1976|傍|bystander|0
+2|1977|帽|cap|0
+2|1978|貌|appearance|0
+2|1979|膨|swell|0
+2|1980|謀|conspire|0
+2|1981|頰 |cheek|0
+2|1982|朴|crude|0
+2|1983|睦|harmonious|0
+2|1984|僕|me|0
+2|1985|墨|black ink|0
+2|1986|撲|slap|0
+2|1987|没|drown|0
+2|1988|勃|rise|0
+2|1989|堀|ditch|0
+2|1990|奔|bustle|0
+2|1991|翻|flip|0
+2|1992|凡|mediocre|0
+2|1993|盆|basin|0
+2|1994|麻|hemp|0
+2|1995|摩|chafe|0
+2|1996|磨|grind|0
+2|1997|魔|witch|0
+2|1998|昧|foolish|0
+2|1999|埋|bury|0
+2|2000|膜|membrane|0
+2|2001|枕|pillow|0
+2|2002|又|or again|0
+2|2003|抹|rub|0
+2|2004|慢|ridicule|0
+2|2005|漫|cartoon|0
+2|2006|魅|fascination|0
+2|2007|岬|headland|0
+2|2008|蜜|honey|0
+2|2009|妙|exquisite|0
+2|2010|眠|sleep|0
+2|2011|矛|halberd|0
+2|2012|霧|fog|0
+2|2013|娘|daughter|0
+2|2014|冥|dark|0
+2|2015|銘|inscription|0
+2|2016|滅|destroy|0
+2|2017|免|excuse|0
+2|2018|麺|noodles|0
+2|2019|茂|overgrown|0
+2|2020|妄|delusion|0
+2|2021|盲|blind|0
+2|2022|耗|decrease|0
+2|2023|猛|fierce|0
+2|2024|網|netting|0
+2|2025|黙|silence|0
+2|2026|紋|family crest|0
+2|2027|冶|melting|0
+2|2028|弥|all the more|0
+2|2029|厄|unlucky|0
+2|2030|躍|leap|0
+2|2031|闇|darkness|0
+2|2032|喩|metaphor|0
+2|2033|愉|pleasure|0
+2|2034|諭|rebuke|0
+2|2035|癒|healing|0
+2|2036|唯|solely|0
+2|2037|幽|seclude|0
+2|2038|悠|permanence|0
+2|2039|湧|boil|0
+2|2040|猶|furthermore|0
+2|2041|裕|abundant|0
+2|2042|雄|male|0
+2|2043|誘|entice|0
+2|2044|憂|melancholy|0
+2|2045|融|dissolve|0
+2|2046|与|give|0
+2|2047|誉|reputation|0
+2|2048|妖|bewitching|0
+2|2049|庸|commonplace|0
+2|2050|揚|hoist|0
+2|2051|揺|swing|0
+2|2052|溶|melt|0
+2|2053|腰|loins|0
+2|2054|瘍|boil (medical)|0
+2|2055|踊|jump|0
+2|2056|窯|kiln|0
+2|2057|擁|embrace|0
+2|2058|謡|noh chanting|0
+2|2059|抑|repress|0
+2|2060|沃|fertility|0
+2|2061|翼|wing|0
+2|2062|拉|crush|0
+2|2063|裸|naked|0
+2|2064|羅|gauze|0
+2|2065|雷|thunder|0
+2|2066|頼|trust|0
+2|2067|絡|entwine|0
+2|2068|酪|dairy products|0
+2|2069|辣|bitter|0
+2|2070|濫|excessive|0
+2|2071|藍|indigo|0
+2|2072|欄|column|0
+2|2073|吏|officer|0
+2|2074|痢|diarrhea|0
+2|2075|履|footgear|0
+2|2076|璃|glassy|0
+2|2077|離|detach|0
+2|2078|慄|fear|0
+2|2079|柳|willow|0
+2|2080|竜|dragon|0
+2|2081|粒|grains|0
+2|2082|隆|hump|0
+2|2083|硫|sulphur|0
+2|2084|侶|companion|0
+2|2085|虜|captive|0
+2|2086|慮|prudence|0
+2|2087|了|finish|0
+2|2088|涼|refreshing|0
+2|2089|猟|game-hunting|0
+2|2090|陵|mausoleum|0
+2|2091|僚|colleague|0
+2|2092|寮|dormitory|0
+2|2093|療|heal|0
+2|2094|瞭|clear|0
+2|2095|糧|provisions|0
+2|2096|厘|thousandth|0
+2|2097|倫|ethics|0
+2|2098|隣|neighboring|0
+2|2099|瑠|lapis lazuli|0
+2|2100|涙|tears|0
+2|2101|累|accumulate|0
+2|2102|塁|bases|0
+2|2103|励|encourage|0
+2|2104|戻|re-|0
+2|2105|鈴|small bell|0
+2|2106|零|zero|0
+2|2107|霊|spirits|0
+2|2108|隷|slave|0
+2|2109|齢|age|0
+2|2110|麗|lovely|0
+2|2111|暦|calendar|0
+2|2112|劣|inferiority|0
+2|2113|烈|ardent|0
+2|2114|裂|split|0
+2|2115|恋|romance|0
+2|2116|廉|bargain|0
+2|2117|錬|tempering|0
+2|2118|呂|spine|0
+2|2119|炉|hearth|0
+2|2120|賂|bribe|0
+2|2121|露|dew|0
+2|2122|弄|tamper with|0
+2|2123|郎|son|0
+2|2124|浪|wandering|0
+2|2125|廊|corridor|0
+2|2126|楼|watchtower|0
+2|2127|漏|leak|0
+2|2128|籠|basket|0
+2|2129|麓|foot of a mountain|0
+2|2130|賄|bribe|0
+2|2131|脇|aside|0
+2|2132|惑|beguile|0
+2|2133|枠|frame|0
+2|2134|湾|gulf|0
+2|2135|腕|arm|0

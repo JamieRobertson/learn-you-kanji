@@ -19,6 +19,7 @@ RCT_EXTERN_METHOD(getQuestions: (nonnull NSInteger *)forGrade
 
 RCT_EXTERN_METHOD(getCourses: (RCTResponseSenderBlock)callback)
 
-// RCT_EXTERN_METHOD(strengthenQuestion: (nonnull NSInteger *)questionId)
+RCT_EXTERN_METHOD(modifyQuestionStrength: (NSDictionary *)questionResults
+                  callback: (RCTResponseSenderBlock)callback)
 
 @end

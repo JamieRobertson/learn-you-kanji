@@ -11,6 +11,10 @@ import UIKit
 import CoreData
 import React
 
+enum PreloadError: Error {
+    case errorPreloadingData
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -25,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let items = NSArray(contentsOfFile: filePath) as! [[String:AnyObject]]
 
                 var questionId:Int16 = 0  // index added to each question
+                let defaultStrength:Float = 0
 
                 for courseObject in items {
                     let course:Course = NSEntityDescription.insertNewObject(
@@ -41,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             forEntityName: "Question", into: DatabaseController.getContext()
                         ) as! Question
                         question.id = questionId; questionId += 1
-                        question.strength = 0
+                        question.strength = defaultStrength
                         question.question = questionObject["question"]
                         question.answer = questionObject["answer"]
                         course.addToQuestions(question)
@@ -49,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
                 DatabaseController.saveContext()
             } else {
-                print("no file found")
+                throw PreloadError.errorPreloadingData
             }
         } catch {
             print(error.localizedDescription)

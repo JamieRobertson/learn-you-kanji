@@ -61,6 +61,7 @@ class QuestionManager: NSObject {
                 func addWrongAnswer(randNum:Int) {
                     // check that we dont have the same answer
                     if randNum != Int(q.id) {
+                        print("randNum : \(randNum)")
                         let newAnswer: String? = questions[randNum].answer
                         wrongAnswers.append(newAnswer!)
                     } else {
@@ -76,6 +77,11 @@ class QuestionManager: NSObject {
                     "correctAnswerKey": c.correctAnswerKey, "choices": c.choices]
         })
     }
+
+    // func oneQuestionFromCourse(questionId:Int, fromCourse:Course) -> Question {
+
+    //     return results
+    // }
     
     func allQuestionsFromCourse(_ fromCourse:[Course]) -> [Question] {
         // fromCourse should be array of length 1
@@ -90,7 +96,7 @@ class QuestionManager: NSObject {
     func fetchCoursesFromDB(_ forGrade:Int = 0) -> [Course] {
         var results = [Course]()
         let fetchRequest:NSFetchRequest<Course> = Course.fetchRequest()
-        // Specify a course ?
+        // Did specify a course ?
         if (forGrade > 0) {
             fetchRequest.predicate = NSPredicate(format: "%K == %i", "grade", forGrade)
             fetchRequest.fetchLimit = 1
@@ -109,34 +115,55 @@ class QuestionManager: NSObject {
         return results
     }
 
-    // @objc(strengthenQuestion:)
-    // func strengthenQuestion(questionId:Int) {
-    //     // Keep a log of which questions user correctly answered
+    @objc(modifyQuestionStrength:callback:)
+    func modifyQuestionStrength(questionResults:[String:Any], callback: (RCTResponseSenderBlock) ) -> Void {
+        // Keep a log of which questions user correctly answered.
+        // If question was correct, the question id here has a true value.
+        // If question strength is > -1.0 && < 1.0 , increase or decrease strength
+        func fetchQuestionFromDB(_ questionId:Int) -> Question {
+            var result = Question()
+            let fetchRequest:NSFetchRequest<Question> = Question.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "%K == %i", "id", questionId)
+            fetchRequest.fetchLimit = 1
+            // Make the DB lookup
+            do {
+                let results = try DatabaseController.getContext().fetch(fetchRequest)
+                if (results.count > 0) {
+                    result = results[0]
+                } else {
+                    throw DBError.noDataFound
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+            return result
+        }
 
-    //     let fetchRequest:NSFetchRequest<Question> = Question.fetchRequest()
-    //     fetchRequest.predicate = NSPredicate(format: "%K == %i", "id", questionId)
-    //     fetchRequest.fetchLimit = 1
-    //     // Make the DB lookup
-    //     do {
-    //         let results = try DatabaseController.getContext().fetch(fetchRequest)
-    //         if (results.count > 0) {
-    //             let questionToStrengthen = results[0]
-    //             let currentStrength = questionToStrengthen.value(forKey: "strength") as! Int
-    //             questionToStrengthen.setValue(value: currentStrength+1, forKey: "strength")
-    //             // Save the context
-    //             do {
-    //                 try DatabaseController.saveContext()
-    //                 print("saved!")
-    //             } catch let error as NSError  {
-    //                 print("Could not save \(error), \(error.userInfo)")
-    //             }
-    //         } else {
-    //             throw DBError.noDataFound
-    //         }
-    //     } catch {
-    //         print(error.localizedDescription)
-    //     }
-    // }
+        for questionResult in questionResults {
+            let id = questionResult["id"] as! Int
+            let isCorrect = questionResult["isCorrect"] as! Bool
+            let questionLookup = fetchQuestionFromDB(id)
+            let currentStrength = questionLookup.value(forKey: "strength") as! Float
+
+            if (currentStrength > -1.0 && currentStrength < 1.0) {
+                if (isCorrect) {
+                    questionLookup.increaseStrength()
+                } else {
+                    questionLookup.decreaseStrength()
+                }
+                // Save the context
+//                do {
+//                    try
+                        DatabaseController.saveContext()
+//                    print("saved!")
+//                } catch let error as NSError  {
+//                    print("Could not save \(error), \(error.userInfo)")
+//                }
+            }
+        }
+        // Return err / success callback
+        callback([NSNull(), true])
+    }
 
     @objc(getCourses:)
     func getCourses(callback: (RCTResponseSenderBlock) ) -> Void {
@@ -152,7 +179,7 @@ class QuestionManager: NSObject {
     }
     
     @objc(getQuestions:maxQuestions:withChoices:callback:)
-    func getQuestions(forGrade:NSInteger, maxQuestions:Int, withChoices:Bool, callback: (RCTResponseSenderBlock) ) -> Void {
+    func getQuestions(forGrade:Int, maxQuestions:Int, withChoices:Bool, callback: (RCTResponseSenderBlock) ) -> Void {
         
         let courses:[Course] = self.fetchCoursesFromDB(forGrade)
         

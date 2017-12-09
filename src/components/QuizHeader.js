@@ -15,7 +15,7 @@ class QuizHeader extends Component {
       '',
       [
         { text: 'Cancel', onPress: () => {}, style: 'cancel' },
-        { text: 'Quit', onPress: () => goBack() }
+        { text: 'Quit', onPress: () => navigate('Home') }
       ],
       { cancelable: true }
     );

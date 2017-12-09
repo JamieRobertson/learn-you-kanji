@@ -77,7 +77,7 @@ class PracticeScreen extends PureComponent {
 
     let QuestionManager = NativeModules.QuestionManager;
     QuestionManager.getQuestions(forGrade, maxQuestions, withChoices, (err, res) => {
-      console.log(err); console.log(res);
+      // console.log(err); console.log(res);
       
       this.setState({data: res}, () => {
         this.setState({isLoaded: true});

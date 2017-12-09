@@ -17,7 +17,7 @@ import { styles, colors } from '../styles';
  * If you select the correct choice you get a point.
  */
 
-const maxQuestions = 10;
+const maxQuestions = 9;  // 10 (base-0)
 const {width, height} = Dimensions.get('window');
 const widthPadding = 30;
 const gridWidth = width - widthPadding;
@@ -38,7 +38,8 @@ class QuizScreen extends Component {
       chosenAnswer: null,
       hasSubmittedAnswer: false,
       chosenAnswerIsCorrect: false, 
-      isModalVisible: false
+      isModalVisible: false,
+      questionResults: []
     }
   }
   componentDidMount() {
@@ -47,11 +48,10 @@ class QuizScreen extends Component {
     this.loadData.bind(this, params.courseGrade, maxQuestions=maxQuestions, withChoices=true)();
   }
   loadData(forGrade, maxQuestions, withChoices) {
-    let { isLoaded, data } = this.state;
+    const QuestionManager = NativeModules.QuestionManager;
 
-    let QuestionManager = NativeModules.QuestionManager;
     QuestionManager.getQuestions(forGrade, maxQuestions, withChoices, (err, res) => {
-      console.log(err); console.log(res);
+      // console.log(err); console.log(res);
       
       this.setState({data: res}, () => {
         this.setState({isLoaded: true});
@@ -75,21 +75,23 @@ class QuizScreen extends Component {
   }
   onSubmitAnswer() {
     // grade the answer then show 'next question' title
-    const { navigate } = this.props.navigation;
+    const { navigation } = this.props;
     let { 
       currentQuestion, hasSubmittedAnswer, chosenAnswerIsCorrect, 
-      totalScore, chosenAnswer, data
+      totalScore, chosenAnswer, data, questionResults
     } = this.state;
 
     // if an answer is selected:
     if (hasSubmittedAnswer) {
       // go to next question
-      if (currentQuestion < (data.length - 1)) {
+      if (currentQuestion < (maxQuestions - 5)) {
         this.setModalVisibility(false);
         this.showNextQuestion();
       } else {
-        // go to score screen
-        navigate('HighScore', { totalScore: totalScore });
+        // go to QuizScore screen
+        navigation.navigate('QuizScore', { 
+          totalScore: totalScore, questionResults: questionResults, courseGrade: navigation.state.params.courseGrade
+        });
       }
     
     // user is submitting answer
@@ -98,12 +100,16 @@ class QuizScreen extends Component {
       this.setModalVisibility(true);
       // check if correct
       if (chosenAnswerIsCorrect) {
+        // increment totalScore
         this.setState({totalScore: totalScore + 1});
-        // increase question strength
-        // let QuestionManager = NativeModules.QuestionManager;
-        // let currentQuestionId = data[currentQuestion].id;
-        // QuestionManager.strengthenQuestion(currentQuestionId);
       }
+      // add result to questionResults
+      let currentQuestionId = data[currentQuestion].id;
+      let isCorrect = chosenAnswerIsCorrect ? true : false;
+
+      this.setState({questionResults: questionResults.concat(
+        {'id': currentQuestionId, 'isCorrect': isCorrect}
+      )});
     }
   }
   onChooseAnswer(choiceIndex, isCorrect) {
@@ -124,7 +130,6 @@ class QuizScreen extends Component {
       incorrect: 'Correct answer:\n'+ data[currentQuestion].answer
     };
 
-    //     onPress={() => this.setModalVisibility(false)}
     if (isModalVisible) {
       return (
         <TouchableOpacity style={[styles.modalWrapper]}>
@@ -139,8 +144,7 @@ class QuizScreen extends Component {
   }
   renderChoices(choices, correctAnswerKey, scrollItemId) {
     let { chosenAnswer, currentQuestion } = this.state;
-    // isActive style - must check current 
-    // question currentQuestion id to be more specific
+    // isActive: check current scrollItemId to be more specific
 
     return choices.map((choice, i) => {
       return (
@@ -157,9 +161,6 @@ class QuizScreen extends Component {
   }
   renderQuizItems() {
     let { data } = this.state;
-
-    // <Text>{ question.answer }</Text>
-    // <Text>{ question.correctAnswerKey }</Text>
 
     return data.map((question, i) => {
       return (
@@ -189,7 +190,7 @@ class QuizScreen extends Component {
     let { navigation } = this.props;
     let { 
       isLoaded, chosenAnswer, totalScore, 
-      hasSubmittedAnswer, currentQuestion 
+      hasSubmittedAnswer, currentQuestion
     } = this.state;
 
     let submitButtonStyle = chosenAnswer === null ? [styles.btnDisabled] : [styles.btnSuccess];
@@ -223,11 +224,7 @@ class QuizScreen extends Component {
             title={ hasSubmittedAnswer === false ? 'Check answer' : 'Next question' } 
             buttonStyle={ submitButtonStyle }
             disabled={ chosenAnswer === null ? true : false}
-            onPress={ 
-              currentQuestion === maxQuestions ? 
-                navigation.navigate('QuizScore', { totalScore: totalScore, courseGrade: navigation.state.params.courseGrade }) : 
-                this.onSubmitAnswer.bind(this) 
-            }
+            onPress={ this.onSubmitAnswer.bind(this) }
           />
         </Row>
         { this.renderModal.bind(this)() }
