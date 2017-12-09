@@ -115,11 +115,9 @@ class QuestionManager: NSObject {
         return results
     }
 
-    @objc(modifyQuestionStrength:callback:)
-    func modifyQuestionStrength(questionResults:[String:Any], callback: (RCTResponseSenderBlock) ) -> Void {
-        // Keep a log of which questions user correctly answered.
-        // If question was correct, the question id here has a true value.
-        // If question strength is > -1.0 && < 1.0 , increase or decrease strength
+    @objc(modifyQuestionStrength:isCorrect:callback:)
+    func modifyQuestionStrength(questionId:Int, isCorrect:Bool, callback: (RCTResponseSenderBlock) ) -> Void {
+        // Increase or decrease strength if question strength is > -1.0 && < 1.0
         func fetchQuestionFromDB(_ questionId:Int) -> Question {
             var result = Question()
             let fetchRequest:NSFetchRequest<Question> = Question.fetchRequest()
@@ -138,28 +136,18 @@ class QuestionManager: NSObject {
             }
             return result
         }
+        
+        let questionLookup = fetchQuestionFromDB(questionId)
+        let currentStrength = questionLookup.value(forKey: "strength") as! Float
 
-        for questionResult in questionResults {
-            let id = questionResult["id"] as! Int
-            let isCorrect = questionResult["isCorrect"] as! Bool
-            let questionLookup = fetchQuestionFromDB(id)
-            let currentStrength = questionLookup.value(forKey: "strength") as! Float
-
-            if (currentStrength > -1.0 && currentStrength < 1.0) {
-                if (isCorrect) {
-                    questionLookup.increaseStrength()
-                } else {
-                    questionLookup.decreaseStrength()
-                }
-                // Save the context
-//                do {
-//                    try
-                        DatabaseController.saveContext()
-//                    print("saved!")
-//                } catch let error as NSError  {
-//                    print("Could not save \(error), \(error.userInfo)")
-//                }
+        if (currentStrength > -1.0 && currentStrength < 1.0) {
+            if (isCorrect) {
+                questionLookup.increaseStrength()
+            } else {
+                questionLookup.decreaseStrength()
             }
+            // Save the context
+            DatabaseController.saveContext()
         }
         // Return err / success callback
         callback([NSNull(), true])

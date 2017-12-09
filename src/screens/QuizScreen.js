@@ -38,8 +38,7 @@ class QuizScreen extends Component {
       chosenAnswer: null,
       hasSubmittedAnswer: false,
       chosenAnswerIsCorrect: false, 
-      isModalVisible: false,
-      questionResults: []
+      isModalVisible: false
     }
   }
   componentDidMount() {
@@ -51,12 +50,24 @@ class QuizScreen extends Component {
     const QuestionManager = NativeModules.QuestionManager;
 
     QuestionManager.getQuestions(forGrade, maxQuestions, withChoices, (err, res) => {
-      // console.log(err); console.log(res);
-      
       this.setState({data: res}, () => {
         this.setState({isLoaded: true});
       });
     });    
+  }
+  postData(currentQuestionId, isCorrect) {
+    // use this function to submit current high score for this course grade
+    // Will be used as overall strength of this course
+    const QuestionManager = NativeModules.QuestionManager;
+
+    // Do something with callback
+    // this.setState({hasSentQuestionStrength: false});
+
+    QuestionManager.modifyQuestionStrength(currentQuestionId, isCorrect, (err, success) => {
+      console.log(err); console.log(success);
+      // Do something with callback
+      // this.setState({hasSentQuestionStrength: true});
+    });
   }
   setModalVisibility(visible) {
     this.setState({isModalVisible: visible});
@@ -78,10 +89,9 @@ class QuizScreen extends Component {
     const { navigation } = this.props;
     let { 
       currentQuestion, hasSubmittedAnswer, chosenAnswerIsCorrect, 
-      totalScore, chosenAnswer, data, questionResults
+      totalScore, chosenAnswer, data
     } = this.state;
 
-    // if an answer is selected:
     if (hasSubmittedAnswer) {
       // go to next question
       if (currentQuestion < (maxQuestions - 5)) {
@@ -90,26 +100,23 @@ class QuizScreen extends Component {
       } else {
         // go to QuizScore screen
         navigation.navigate('QuizScore', { 
-          totalScore: totalScore, questionResults: questionResults, courseGrade: navigation.state.params.courseGrade
+          totalScore: totalScore, courseGrade: navigation.state.params.courseGrade
         });
       }
     
-    // user is submitting answer
     } else {
+      // user is submitting answer
       this.setState({hasSubmittedAnswer: true});
       this.setModalVisibility(true);
+
       // check if correct
       if (chosenAnswerIsCorrect) {
         // increment totalScore
         this.setState({totalScore: totalScore + 1});
       }
-      // add result to questionResults
-      let currentQuestionId = data[currentQuestion].id;
-      let isCorrect = chosenAnswerIsCorrect ? true : false;
+      // Store result in Core Data
+      this.postData(data[currentQuestion].id, chosenAnswerIsCorrect)
 
-      this.setState({questionResults: questionResults.concat(
-        {'id': currentQuestionId, 'isCorrect': isCorrect}
-      )});
     }
   }
   onChooseAnswer(choiceIndex, isCorrect) {
