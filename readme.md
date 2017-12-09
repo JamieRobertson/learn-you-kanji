@@ -5,23 +5,36 @@ Kanji flashcard app
 **Learn you a kanji for great good!**  
 Learn some commonly used kanji characters and have fun with this simple flashcard game for ios.  
 
+### Run in development
+Run React Native as well as building/running iOS app from Xcode.
+
+```bash
+# Ensure that Node server is running and available on the same network
+# cd into root directory (where index.ios.js is), then run
+$ npm start
+```
+
+
 ### About the data
 App uses lists of [Jōyō kaji](https://en.wikipedia.org/wiki/J%C5%8Dy%C5%8D_kanji).  
 List of jōyō kanji taken from https://en.wikipedia.org/wiki/List_of_j%C5%8Dy%C5%8D_kanji  
 Grade 07 and up means that it is taught in secondary school.  
 Secondary school characters are split into 5 sections.  
 
+
 ### About the source code
 Project uses [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON). Install it with [Carthage](https://github.com/Carthage/Carthage).  
+
 
 ### Todo
 Add about page with 'what is joyo kanji' + useful info  
 Add section on radicals  
 
+
 ### Notes
 Inspect core data:  
-```bash
 
+```bash
 # Navigate to correct sqlite file - somewhere in 
 $ cd ~/Library/Developer/CoreSimulator/Devices/
 
@@ -45,9 +58,11 @@ $ sqlite3 LearnYouKanji.sqlite "SELECT * FROM ZQUESTION ;" > output.txt
 $ sqlite3 LearnYouKanji.sqlite "SELECT ZCOURSE, ZID, ZQUESTION, ZANSWER, ZSTRENGTH FROM ZQUESTION ORDER BY ZID ASC;" > output.txt
 ```
 
+
 ### Important  
 (Info.plist)  
 App Transport Security is good for your users. Make sure to re-enable it prior to releasing your app for production.  
+
 
 ### Troubleshooting  
 podfile:  
