@@ -238,9 +238,10 @@ freeline_project_description.json
 *.dSYM.zip
 *.dSYM
 
-## Playgrounds
-timeline.xctimeline
-playground.xcworkspace
+## Playgrounds - ignore all playgrounds
+playgrounds
+# timeline.xctimeline
+# playground.xcworkspace
 
 # Swift Package Manager
 #

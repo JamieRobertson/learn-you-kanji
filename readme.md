@@ -23,7 +23,8 @@ Secondary school characters are split into 5 sections.
 
 
 ### About the source code
-Project uses [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON). Install it with [Carthage](https://github.com/Carthage/Carthage).  
+~~Project uses [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON). Install it with [Carthage](https://github.com/Carthage/Carthage).~~  
+No it doesn't. It uses a plist file now.
 
 
 ### Todo
@@ -77,8 +78,18 @@ update node (6 -> 8) ?
 Seems to occur only in dev mode  
 
 clean npm:  
-`rm -rf node_modules && npm install`
-`watchman watch-del-all`
+`rm -rf node_modules && npm install`  
+`watchman watch-del-all`  
 `node_modules/react-native/packager/packager.sh --reset-cache`
+
+Warning: `core data connection has no connected handler`  
+See [here](https://stackoverflow.com/questions/44081674/react-native-connection-has-no-connection-handler-error-meaning)
+```
+Xcode menu -> Product -> Edit Scheme...
+Environment Variables -> Add -> Name: "OS_ACTIVITY_MODE", Value:"disable"
+```
+
+`CoreData: error: Failed to call designated initializer on NSManagedObject class 'LearnYouKanji.Question'`
+
 
 <span><img src="https://github.com/JamieRobertson/learn-you-kanji/blob/master/screenshots/github/lyk-screenshot-1.png" width="320" height="480" />&nbsp;<img src="https://github.com/JamieRobertson/learn-you-kanji/blob/master/screenshots/github/lyk-screenshot-2.png" width="320" height="480" /><br style="clear: both;"><img src="https://github.com/JamieRobertson/learn-you-kanji/blob/master/screenshots/github/lyk-screenshot-3.png" width="320" height="480" />&nbsp;<img src="https://github.com/JamieRobertson/learn-you-kanji/blob/master/screenshots/github/lyk-screenshot-4.png" width="320" height="480" /></span>
