@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Animated, Image, StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native';
 import { H1 } from '../components';
 import { styles, colors } from '../styles';
@@ -104,5 +105,14 @@ const flipperIcon = {
   width: 13,
   height: 13
 };
+
+Flipper.propTypes = {
+  question: PropTypes.string,
+  answer: PropTypes.string,
+  k: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string
+  ])
+}
 
 export default Flipper;

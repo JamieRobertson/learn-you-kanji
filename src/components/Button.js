@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Text, TouchableOpacity } from 'react-native';
 import { styles } from '../styles';
 
@@ -34,6 +35,18 @@ class Btn extends React.Component {
       </TouchableOpacity>
     );
   }
+}
+
+Btn.propTypes = {
+  onPress: PropTypes.func,
+  title: PropTypes.string,
+  disabled: PropTypes.bool,
+  textStyle: PropTypes.array,
+  buttonStyle: PropTypes.array,
+  k: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string
+  ])
 }
 
 export default Btn;

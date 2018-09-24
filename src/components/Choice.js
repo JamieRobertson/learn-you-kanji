@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Text, TouchableHighlight } from 'react-native';
 import { styles, colors } from '../styles';
 
@@ -27,6 +28,14 @@ class Choice extends React.Component {
       </TouchableHighlight>
     );
   }
+}
+
+Choice.propTypes = {
+  onPress: PropTypes.func,
+  choiceIndex: PropTypes.number,
+  isCorrect: PropTypes.bool,
+  isActive: PropTypes.bool,
+  title: PropTypes.string
 }
 
 export default Choice;
