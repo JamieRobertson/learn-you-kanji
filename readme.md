@@ -6,8 +6,9 @@ Kanji flashcard app
 Learn some commonly used kanji characters and have fun with this simple flashcard game for ios.  
 
 ### Run in development
-Run React Native as well as building/running iOS app from Xcode.
+Use `LearnYouKanji.xcworkspace` not `LearnYouKanji.xcodeproj`.
 
+Run React Native as well as building/running iOS app from Xcode.  
 ```bash
 # Ensure that Node server is running and available on the same network
 # cd into root directory (where index.ios.js is), then run
@@ -34,7 +35,6 @@ Add section on radicals
 
 ### Notes
 Inspect core data:  
-
 ```bash
 # Navigate to correct sqlite file - somewhere in 
 $ cd ~/Library/Developer/CoreSimulator/Devices/
