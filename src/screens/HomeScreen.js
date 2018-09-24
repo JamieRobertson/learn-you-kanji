@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import { ActivityIndicator, Button, Image, NativeModules, ScrollView, Text, View } from 'react-native';
 
 import { Row, Col, Btn } from '../components';

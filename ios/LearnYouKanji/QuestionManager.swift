@@ -121,6 +121,7 @@ class QuestionManager: NSObject {
         func fetchQuestionFromDB(_ questionId:Int) -> Question {
             var result = Question()
             let fetchRequest:NSFetchRequest<Question> = Question.fetchRequest()
+
             fetchRequest.predicate = NSPredicate(format: "%K == %i", "id", questionId)
             fetchRequest.fetchLimit = 1
             // Make the DB lookup

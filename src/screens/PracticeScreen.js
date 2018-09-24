@@ -1,9 +1,8 @@
 import React, { PureComponent } from 'react';
 import Dimensions from 'Dimensions';
-import PropTypes from 'prop-types';
 import { HeaderBackButton } from 'react-navigation';
-
 import { ActivityIndicator, Button, FlatList, NativeModules, Text, View } from 'react-native';
+
 import { Col, Flipper, Row } from '../components';
 import { styles } from '../styles';
 

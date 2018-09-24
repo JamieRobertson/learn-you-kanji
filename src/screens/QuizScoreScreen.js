@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-
 import { ActivityIndicator, Button, Text } from 'react-native';
+
 import { Btn, Col } from '../components';
 import { styles, colors } from '../styles';
 

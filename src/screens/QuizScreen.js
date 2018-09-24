@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-
 import { 
   ActivityIndicator, Modal, NativeModules, 
   ScrollView, Text, TouchableOpacity, View 
@@ -64,7 +62,7 @@ class QuizScreen extends Component {
     // this.setState({hasSentQuestionStrength: false});
 
     QuestionManager.modifyQuestionStrength(currentQuestionId, isCorrect, (err, success) => {
-      console.log(err); console.log(success);
+      console.log(err, success);
       // Do something with callback
       // this.setState({hasSentQuestionStrength: true});
     });
